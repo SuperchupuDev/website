@@ -1,0 +1,31 @@
+{
+  "name": "@superchupu/website",
+  "version": "0.1.0",
+  "description": "superchupu's tiny website",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "format": "biome format --write .",
+    "lint": "biome lint .",
+    "check": "biome check .",
+    "typecheck": "tsc",
+    "test": "pnpm run check && pnpm run typecheck"
+  },
+  "keywords": [],
+  "author": "Superchupu",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^14.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.5.3",
+    "@types/node": "20.11.17",
+    "@types/react": "18.2.55",
+    "typescript": "^5.3.3"
+  },
+  "packageManager": "pnpm@8.15.1"
+}
