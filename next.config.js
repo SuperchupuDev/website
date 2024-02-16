@@ -1,8 +1,15 @@
+import nextMDX from '@next/mdx';
+
+const withMDX = nextMDX();
+
 /** @type {import('next').NextConfig} */
-export default {
+const nextConfig = {
+  images: {
+    unoptimized: true
+  },
   output: 'export',
-  reactStrictMode: true,
-  experimental: {
-    typedRoutes: true
-  }
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+  reactStrictMode: true
 };
+
+export default withMDX(nextConfig);
