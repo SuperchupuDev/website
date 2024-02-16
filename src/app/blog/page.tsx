@@ -6,8 +6,8 @@ export default function Blog() {
 
   return (
     <main>
-      {posts.map((data, index) => (
-        <Post {...data} key={index} />
+      {posts.map(data => (
+        <Post {...data} key={data.slug} />
       ))}
     </main>
   );
