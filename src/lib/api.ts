@@ -7,7 +7,7 @@ const postsDirectory = join(process.cwd(), 'src', 'posts');
 export type Post = {
   slug: string;
   title: string;
-  date: string;
+  date: Date;
   coverImage: string;
   excerpt: string;
   ogImage: {
@@ -35,6 +35,6 @@ export function getAllPosts(): Post[] {
   const posts = slugs
     .map(slug => getPostBySlug(slug))
     // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+    .sort((a, b) => b.date.getTime() - a.date.getTime());
   return posts;
 }

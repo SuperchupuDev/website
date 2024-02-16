@@ -1,10 +1,11 @@
-import CoverImage from './CoverImage';
+import { CoverImage } from './CoverImage';
+import { DateContainer } from './DateContainer';
 import { PostTitle } from './PostTitle';
 
 type Props = {
   title: string;
   coverImage: string;
-  date: string;
+  date: Date;
 };
 
 export function PostHeader({ title, coverImage, date }: Props) {
@@ -15,7 +16,7 @@ export function PostHeader({ title, coverImage, date }: Props) {
         <CoverImage title={title} src={coverImage} />
       </div>
       <div>
-        <div>{date}</div>
+        <DateContainer date={date} />
       </div>
     </>
   );

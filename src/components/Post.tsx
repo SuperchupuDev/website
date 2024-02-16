@@ -1,5 +1,6 @@
 import { type Post as PostData } from '@/lib/api';
 import Link from 'next/link';
+import { DateContainer } from './DateContainer';
 
 export const Post = ({ title, coverImage, date, slug, excerpt }: PostData) => {
   return (
@@ -8,7 +9,7 @@ export const Post = ({ title, coverImage, date, slug, excerpt }: PostData) => {
         <Link href={`./blog/${slug}`}>{title}</Link>
       </h2>
       <img src={coverImage} alt={title} />
-      <p>{date}</p>
+      <DateContainer date={date} />
       <p>{excerpt}</p>
     </article>
   );

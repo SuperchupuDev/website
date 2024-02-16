@@ -3,7 +3,8 @@ import type { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: "superchupu's tiny website",
-  description: 'work in progress'
+  description: 'work in progress',
+  metadataBase: new URL('https://superchupu.pages.dev')
 };
 
 export default function RootLayout({

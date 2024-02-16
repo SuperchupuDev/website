@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import CoverImage from './CoverImage';
+import { CoverImage } from './CoverImage';
 
 type Props = {
   title: string;
