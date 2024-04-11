@@ -1,4 +1,4 @@
-import { type Post as PostData } from '@/lib/api';
+import type { Post as PostData } from '@/lib/api';
 import Link from 'next/link';
 import { DateContainer } from './DateContainer';
 

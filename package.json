@@ -6,12 +6,12 @@
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
-    "start": "next start",
+    "check": "biome check .",
     "format": "biome format --write .",
     "lint": "biome lint .",
-    "check": "biome check .",
-    "typecheck": "tsc",
-    "test": "pnpm run check && pnpm run typecheck"
+    "lint:fix": "biome lint . --apply-unsafe",
+    "test": "pnpm run \"/^(check|typecheck)$/\"",
+    "typecheck": "tsc"
   },
   "keywords": [],
   "author": "Superchupu",
@@ -19,19 +19,19 @@
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
-    "@next/mdx": "^14.1.0",
+    "@next/mdx": "^14.2.0",
     "gray-matter": "^4.0.3",
-    "next": "^14.1.0",
+    "next": "^14.2.0",
     "next-mdx-remote": "^4.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.5.3",
-    "@types/mdx": "^2.0.11",
-    "@types/node": "20.11.17",
-    "@types/react": "18.2.55",
-    "typescript": "^5.3.3"
+    "@biomejs/biome": "^1.6.4",
+    "@types/mdx": "^2.0.13",
+    "@types/node": "20.12.7",
+    "@types/react": "18.2.77",
+    "typescript": "^5.4.5"
   },
-  "packageManager": "pnpm@8.15.1"
+  "packageManager": "pnpm@8.15.6"
 }
