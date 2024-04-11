@@ -29,8 +29,8 @@
   "devDependencies": {
     "@biomejs/biome": "^1.6.4",
     "@types/mdx": "^2.0.13",
-    "@types/node": "20.12.7",
-    "@types/react": "18.2.77",
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.77",
     "typescript": "^5.4.5"
   },
   "packageManager": "pnpm@8.15.6"
