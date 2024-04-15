@@ -19,19 +19,19 @@
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
-    "@next/mdx": "^14.2.0",
+    "@next/mdx": "^14.2.1",
     "gray-matter": "^4.0.3",
-    "next": "^14.2.0",
-    "next-mdx-remote": "^4.4.1",
+    "next": "^14.2.1",
+    "next-mdx-remote": "0.0.0-canary-20240321205249",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.6.4",
+    "@biomejs/biome": "^1.7.0",
     "@types/mdx": "^2.0.13",
     "@types/node": "^20.12.7",
-    "@types/react": "^18.2.77",
+    "@types/react": "^18.2.78",
     "typescript": "^5.4.5"
   },
-  "packageManager": "pnpm@8.15.6"
+  "packageManager": "pnpm@8.15.7"
 }

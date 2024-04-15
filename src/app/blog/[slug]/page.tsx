@@ -1,8 +1,8 @@
 import { PostBody } from '@/components/PostBody';
 import { PostHeader } from '@/components/PostHeader';
 import { getAllPosts, getPostBySlug } from '@/lib/api';
-import markdownToHtml from '@/lib/markdownToHtml';
 import type { Metadata } from 'next';
+import { serialize } from 'next-mdx-remote/serialize';
 import { notFound } from 'next/navigation';
 
 // Return a list of `params` to populate the [slug] dynamic segment
@@ -46,7 +46,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
     return notFound();
   }
 
-  const content = await markdownToHtml(post.content);
+  const content = await serialize(post.content);
 
   return (
     <main>

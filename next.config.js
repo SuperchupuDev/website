@@ -9,7 +9,20 @@ const nextConfig = {
   },
   output: 'export',
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
-  reactStrictMode: true
+  reactStrictMode: true,
+  // TODO: remove this once https://github.com/hashicorp/next-mdx-remote/issues/381 is fixed
+  transpilePackages: ['next-mdx-remote'],
+  experimental: {
+    mdxRs: true,
+    turbo: {
+      rules: {
+        '*.mdx': {
+          loaders: ['@mdx-js/loader'],
+          as: '*.js'
+        }
+      }
+    }
+  }
 };
 
 export default withMDX(nextConfig);
