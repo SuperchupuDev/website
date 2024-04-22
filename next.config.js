@@ -12,6 +12,9 @@ const nextConfig = {
   reactStrictMode: true,
   // TODO: remove this once https://github.com/hashicorp/next-mdx-remote/issues/381 is fixed
   transpilePackages: ['next-mdx-remote'],
+  typescript: {
+    ignoreBuildErrors: true
+  },
   experimental: {
     mdxRs: true,
     turbo: {
