@@ -2,7 +2,6 @@ import { PostBody } from '@/components/PostBody';
 import { PostHeader } from '@/components/PostHeader';
 import { getAllPosts, getPostBySlug } from '@/lib/api';
 import type { Metadata } from 'next';
-import { serialize } from 'next-mdx-remote/serialize';
 import { notFound } from 'next/navigation';
 
 // Return a list of `params` to populate the [slug] dynamic segment
@@ -38,7 +37,7 @@ export function generateMetadata({ params }: Params): Metadata {
   };
 }
 
-export default async function PostPage({ params }: { params: { slug: string } }) {
+export default function PostPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const post = getPostBySlug(slug);
 
@@ -46,13 +45,11 @@ export default async function PostPage({ params }: { params: { slug: string } })
     return notFound();
   }
 
-  const content = await serialize(post.content);
-
   return (
     <main>
       <article>
         <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} />
-        <PostBody content={content} />
+        <PostBody content={post.content} />
       </article>
     </main>
   );

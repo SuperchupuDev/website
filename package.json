@@ -17,21 +17,17 @@
   "author": "Superchupu",
   "license": "MIT",
   "dependencies": {
-    "@mdx-js/loader": "^3.0.1",
-    "@mdx-js/react": "^3.0.1",
-    "@next/mdx": "^14.2.3",
     "gray-matter": "^4.0.3",
     "next": "^14.2.3",
-    "next-mdx-remote": "0.0.0-canary-20240321205249",
+    "next-mdx-remote-client": "^1.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.7.3",
-    "@types/mdx": "^2.0.13",
-    "@types/node": "^20.12.10",
-    "@types/react": "^18.3.1",
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.3",
     "typescript": "^5.4.5"
   },
-  "packageManager": "pnpm@9.1.0"
+  "packageManager": "pnpm@9.1.2"
 }
