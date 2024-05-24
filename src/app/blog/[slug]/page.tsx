@@ -2,9 +2,7 @@ import { PostBody } from '@/components/PostBody';
 import { PostHeader } from '@/components/PostHeader';
 import { getAllPosts, getPostFrontmatter } from '@/lib/api';
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
 
-// Return a list of `params` to populate the [slug] dynamic segment
 export function generateStaticParams() {
   const posts = getAllPosts();
 
@@ -22,17 +20,11 @@ type Params = {
 export function generateMetadata({ params }: Params): Metadata {
   const post = getPostFrontmatter(params.slug);
 
-  if (!post) {
-    return notFound();
-  }
-
-  const title = `${post.title} | superchupu`;
-
   return {
+    title: post.title,
+    description: post.excerpt,
     openGraph: {
-      title,
-      description: post.excerpt,
-      images: [post.ogImage.url]
+      images: [post.coverImage]
     }
   };
 }
@@ -40,10 +32,6 @@ export function generateMetadata({ params }: Params): Metadata {
 export default function PostPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const post = getPostFrontmatter(slug);
-
-  if (!post) {
-    return notFound();
-  }
 
   return (
     <main>

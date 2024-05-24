@@ -5,10 +5,10 @@ export default function Blog() {
   const posts = getAllPosts();
 
   return (
-    <main>
+    <>
       {posts.map(data => (
         <PostPreview {...data} key={data.slug} />
       ))}
-    </main>
+    </>
   );
 }
