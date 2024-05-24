@@ -1,6 +1,6 @@
 import { PostBody } from '@/components/PostBody';
 import { PostHeader } from '@/components/PostHeader';
-import { getAllPosts, getPostBySlug } from '@/lib/api';
+import { getAllPosts, getPostFrontmatter } from '@/lib/api';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
@@ -20,7 +20,7 @@ type Params = {
 };
 
 export function generateMetadata({ params }: Params): Metadata {
-  const post = getPostBySlug(params.slug);
+  const post = getPostFrontmatter(params.slug);
 
   if (!post) {
     return notFound();
@@ -39,7 +39,7 @@ export function generateMetadata({ params }: Params): Metadata {
 
 export default function PostPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
-  const post = getPostBySlug(slug);
+  const post = getPostFrontmatter(slug);
 
   if (!post) {
     return notFound();

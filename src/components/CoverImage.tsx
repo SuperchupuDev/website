@@ -8,7 +8,7 @@ type Props = {
 };
 
 export const CoverImage = ({ title, src, slug }: Props) => {
-  const image = <Image src={src} alt={`Cover Image for ${title}`} width={1300} height={630} />;
+  const image = <Image src={src} alt={`Cover Image for ${title}`} width={1300} height={500} />;
   return (
     <div>
       {slug ? (

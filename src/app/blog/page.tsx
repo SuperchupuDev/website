@@ -1,4 +1,4 @@
-import { Post } from '@/components/Post';
+import { PostPreview } from '@/components/PostPreview';
 import { getAllPosts } from '@/lib/api';
 
 export default function Blog() {
@@ -7,7 +7,7 @@ export default function Blog() {
   return (
     <main>
       {posts.map(data => (
-        <Post {...data} key={data.slug} />
+        <PostPreview {...data} key={data.slug} />
       ))}
     </main>
   );
