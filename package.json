@@ -23,7 +23,7 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.7.3",
+    "@biomejs/biome": "^1.8.2",
     "@types/node": "^20.12.12",
     "@types/react": "^18.3.3",
     "typescript": "^5.4.5"
