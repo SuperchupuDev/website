@@ -3,6 +3,8 @@ import { PostHeader } from '@/components/PostHeader';
 import { getAllPosts, getPostFrontmatter } from '@/lib/api';
 import type { Metadata } from 'next';
 
+import './styles.css';
+
 export function generateStaticParams() {
   const posts = getAllPosts();
 
@@ -35,7 +37,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 
   return (
     <main>
-      <article>
+      <article id="blog-post">
         <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} />
         <PostBody content={post.content} />
       </article>

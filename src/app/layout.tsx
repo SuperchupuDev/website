@@ -1,5 +1,9 @@
+import { Header } from '@/components/Header';
 import type { Metadata } from 'next';
+import { ThemeProvider } from 'next-themes';
 import type { ReactNode } from 'react';
+
+import './global.css';
 
 export const metadata: Metadata = {
   title: {
@@ -16,8 +20,13 @@ export default function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider>
+          <Header />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

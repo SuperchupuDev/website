@@ -1,0 +1,15 @@
+#blog-post {
+  justify-content: center;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#blog-post h1 {
+  font-size: 36px;
+}
+
+#blog-post p {
+  font-size: 20px;
+  max-width: 1000px;
+}
