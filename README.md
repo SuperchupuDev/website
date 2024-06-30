@@ -1,3 +1,3 @@
 ### superchupu's tiny website
 
-work in progress
+work in progress (WIP)
