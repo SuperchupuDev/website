@@ -6,13 +6,14 @@ type Props = {
   title: string;
   coverImage: string;
   date: string;
+  excerpt: string;
 };
 
-export function PostHeader({ title, coverImage, date }: Props) {
+export function PostHeader({ title, coverImage, date, excerpt }: Props) {
   return (
     <>
       <PostTitle>{title}</PostTitle>
-      <CoverImage title={title} src={coverImage} />
+      <CoverImage title={title} excerpt={excerpt} src={coverImage} />
       <DateContainer date={date} />
     </>
   );

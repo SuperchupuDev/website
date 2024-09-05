@@ -1,8 +1,14 @@
 #blog-post {
   justify-content: center;
-  max-width: fit-content;
+  max-width: calc(100vw - 10px);
   margin-left: auto;
   margin-right: auto;
+  width: 1000px;
+}
+
+#blog-post img {
+  max-width: calc(100vw - 10px);
+  height: auto;
 }
 
 #blog-post h1 {
@@ -11,5 +17,4 @@
 
 #blog-post p {
   font-size: 20px;
-  max-width: 1000px;
 }

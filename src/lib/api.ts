@@ -11,6 +11,7 @@ export type Post = {
   coverImage: string;
   excerpt: string;
   content: string;
+  hidden?: boolean;
 };
 
 export function getPostSlugs() {
@@ -26,7 +27,10 @@ export function getPostFrontmatter(slug: string) {
   return { ...frontmatter, slug: realSlug, content: strippedSource } as Post;
 }
 
-export function getAllPosts(): Post[] {
+export function getAllPosts(withHidden: boolean): Post[] {
   const slugs = getPostSlugs();
-  return slugs.map(slug => getPostFrontmatter(slug)).sort((a, b) => (a.date > b.date ? -1 : 1));
+  return slugs
+    .map(slug => getPostFrontmatter(slug))
+    .filter(p => withHidden || !p.hidden)
+    .sort((a, b) => (a.date > b.date ? -1 : 1));
 }

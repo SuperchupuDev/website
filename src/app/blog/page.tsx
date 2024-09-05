@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function Blog() {
-  const posts = getAllPosts();
+  const posts = getAllPosts(false);
 
   return (
     <div id="blog-container">

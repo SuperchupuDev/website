@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 import './styles.css';
 
 export function generateStaticParams() {
-  const posts = getAllPosts();
+  const posts = getAllPosts(true);
 
   return posts.map(post => ({
     slug: post.slug
@@ -38,7 +38,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
   return (
     <main>
       <article id="blog-post">
-        <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} />
+        <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} excerpt={post.excerpt} />
         <PostBody content={post.content} />
       </article>
     </main>
