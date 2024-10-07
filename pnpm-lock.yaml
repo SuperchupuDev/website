@@ -13,7 +13,7 @@ importers:
         version: 14.2.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-mdx-remote-client:
         specifier: ^1.0.3
-        version: 1.0.3(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 1.0.3(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-themes:
         specifier: ^0.3.0
         version: 0.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -31,8 +31,8 @@ importers:
         specifier: ^22.5.4
         version: 22.5.4
       '@types/react':
-        specifier: ^18.3.5
-        version: 18.3.5
+        specifier: ^18.3.11
+        version: 18.3.11
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -206,8 +206,8 @@ packages:
   '@types/prop-types@15.7.12':
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
 
-  '@types/react@18.3.5':
-    resolution: {integrity: sha512-WeqMfGJLGuLCqHGYRGHxnKrXcTitc6L/nBUWfWPcTarG3t9PsquqUMuVeXZeca+mglY4Vo5GZjCi0A3Or2lnxA==}
+  '@types/react@18.3.11':
+    resolution: {integrity: sha512-r6QZ069rFTjrEYgFdOck1gK7FLVsgJE7tTz0pQBczlBNUhBNk0MQH4UbnFSwjpQLMkLzgqvBBa+qGpLje16eTQ==}
 
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
@@ -758,10 +758,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@mdx-js/react@3.0.1(@types/react@18.3.5)(react@18.3.1)':
+  '@mdx-js/react@3.0.1(@types/react@18.3.11)(react@18.3.1)':
     dependencies:
       '@types/mdx': 2.0.13
-      '@types/react': 18.3.5
+      '@types/react': 18.3.11
       react: 18.3.1
 
   '@next/env@14.2.8': {}
@@ -832,7 +832,7 @@ snapshots:
 
   '@types/prop-types@15.7.12': {}
 
-  '@types/react@18.3.5':
+  '@types/react@18.3.11':
     dependencies:
       '@types/prop-types': 15.7.12
       csstype: 3.1.3
@@ -1329,11 +1329,11 @@ snapshots:
 
   nanoid@3.3.7: {}
 
-  next-mdx-remote-client@1.0.3(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  next-mdx-remote-client@1.0.3(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@babel/code-frame': 7.24.7
       '@mdx-js/mdx': 3.0.1
-      '@mdx-js/react': 3.0.1(@types/react@18.3.5)(react@18.3.1)
+      '@mdx-js/react': 3.0.1(@types/react@18.3.11)(react@18.3.1)
       '@types/mdx': 2.0.13
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
