@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     default: "superchupu's tiny website"
   },
   description: 'work in progress',
-  metadataBase: new URL('https://superchupu.pages.dev')
+  metadataBase: new URL('https://superchupu.dev')
 };
 
 export default function RootLayout({
