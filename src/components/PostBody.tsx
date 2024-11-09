@@ -8,7 +8,7 @@ type Props = {
 
 const mdxComponents: MDXComponents = {
   a: ({ children, ref, ...props }) => (
-    <Link {...props} href={props.href ?? ''} target={props.href?.startsWith('/') ? 'self' : '_blank'}>
+    <Link {...props} href={props.href ?? ''} target={props.href?.startsWith('/') ? '_self' : '_blank'}>
       {children}
     </Link>
   ),
