@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: 'yes i have a blog isnt that awesome'
 };
 
-export default function Blog() {
-  const posts = getAllPosts(false);
+export default async function Blog() {
+  const posts = await getAllPosts(false);
 
   return (
     <div id="blog-container">
