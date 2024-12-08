@@ -1,11 +1,11 @@
-/** @type {import('next').NextConfig} */
+import type { NextConfig } from 'next';
+
 export default {
   images: {
     unoptimized: true
   },
   output: 'export',
-  reactStrictMode: true,
   typescript: {
     ignoreBuildErrors: true
   }
-};
+} satisfies NextConfig;

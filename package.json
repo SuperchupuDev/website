@@ -10,24 +10,24 @@
     "format": "biome format --write",
     "lint": "biome lint",
     "lint:fix": "biome lint --fix --unsafe",
-    "test": "pnpm run \"/^(check|typecheck)$/\"",
+    "test": "node --run check && node --run typecheck",
     "typecheck": "tsc"
   },
   "keywords": [],
   "author": "Superchupu",
   "license": "MIT",
   "dependencies": {
-    "next": "^14.2.8",
+    "next": "^15.0.4",
     "next-mdx-remote-client": "^1.0.3",
-    "next-themes": "^0.3.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "next-themes": "^0.4.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.8.3",
-    "@types/node": "^22.5.4",
-    "@types/react": "^18.3.5",
-    "typescript": "^5.5.4"
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.10.1",
+    "@types/react": "^19.0.1",
+    "typescript": "^5.7.2"
   },
-  "packageManager": "pnpm@9.9.0"
+  "packageManager": "pnpm@9.13.2"
 }

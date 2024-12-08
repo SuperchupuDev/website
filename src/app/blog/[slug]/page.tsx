@@ -14,12 +14,13 @@ export function generateStaticParams() {
 }
 
 type Params = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export function generateMetadata({ params }: Params): Metadata {
+export async function generateMetadata(props: Params): Promise<Metadata> {
+  const params = await props.params;
   const post = getPostFrontmatter(params.slug);
 
   return {
@@ -31,8 +32,8 @@ export function generateMetadata({ params }: Params): Metadata {
   };
 }
 
-export default function PostPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function PostPage(props: Params) {
+  const { slug } = await props.params;
   const post = getPostFrontmatter(slug);
 
   return (
