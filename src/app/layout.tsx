@@ -1,5 +1,5 @@
 import { Header } from '@/components/Header';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { ThemeProvider } from 'next-themes';
 import type { ReactNode } from 'react';
 
@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   },
   description: 'work in progress',
   metadataBase: new URL('https://superchupu.dev')
+};
+
+export const viewport: Viewport = {
+  themeColor: '#ffc0cb'
 };
 
 export default function RootLayout({
