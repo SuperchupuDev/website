@@ -1,0 +1,82 @@
+:root {
+  --text-color: black;
+  --pronouns: purple;
+}
+
+[data-theme="dark"] {
+  --text-color: white;
+  --pronouns: pink;
+}
+
+.pronouns {
+  animation: pronouns 2s linear infinite;
+}
+
+@keyframes pronouns {
+  0% {
+    color: var(--pronouns);
+  }
+  50% {
+    color: var(--text-color);
+  }
+  100% {
+    color: var(--pronouns);
+  }
+}
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 400px;
+  width: 400px;
+  max-height: calc(100vw - 16px);
+  max-width: calc(100vw - 16px);
+}
+
+.cat {
+  max-height: calc(100vw - 16px);
+  max-width: calc(100vw - 16px);
+}
+
+.marquee-left {
+  animation: left 2s linear infinite;
+}
+
+.marquee-up {
+  animation: up 2s linear infinite;
+}
+
+.marquee-bounce {
+  animation: bounce 2s linear infinite;
+}
+
+@keyframes left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateX(-25%);
+  }
+  50% {
+    transform: translateX(25%);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}

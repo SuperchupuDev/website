@@ -1,13 +1,13 @@
 #blog-post {
   justify-content: center;
-  max-width: calc(100vw - 10px);
+  max-width: calc(100vw - 16px);
   margin-left: auto;
   margin-right: auto;
   width: 1000px;
 }
 
 #blog-post img {
-  max-width: calc(100vw - 10px);
+  max-width: calc(100vw - 16px);
   height: auto;
 }
 
