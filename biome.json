@@ -27,6 +27,9 @@
   "linter": {
     "rules": {
       "recommended": true,
+      "a11y": {
+        "noDistractingElements": "off"
+      },
       "correctness": {
         "noNewSymbol": "error",
         "noUndeclaredVariables": "error",

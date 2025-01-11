@@ -21,6 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/images/meee.png" type="image/png" />
+      </head>
       <body>
         <ThemeProvider>
           <Header />

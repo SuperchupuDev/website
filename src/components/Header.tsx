@@ -23,7 +23,11 @@ export const Header = () => {
       </Link>
       &nbsp;&nbsp;
       <Link href="https://twitter.com/superchupu" target="_blank" rel="noreferrer">
-        my twitter
+        tw*tter
+      </Link>
+      &nbsp;&nbsp;
+      <Link href="https://bsky.app/profile/superchupu.dev" target="_blank" rel="noreferrer">
+        bluesky
       </Link>
       &nbsp;&nbsp;
       <select
