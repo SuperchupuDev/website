@@ -20,7 +20,7 @@ export const Cats = () => (
     <h3>this is my dad's cat</h3>
     <Image
       className="marquee-bounce"
-      src="/images/luigi.jpg"
+      src="/images/luigi.png"
       alt="luigi"
       width={400}
       height={400}
@@ -32,7 +32,7 @@ export const Cats = () => (
     <div className="marquee">
       <Image
         className="marquee-up"
-        src="/images/vespines.jpg"
+        src="/images/vespines.png"
         alt="vespín [right] and vespina [left]"
         width={400}
         height={400}
