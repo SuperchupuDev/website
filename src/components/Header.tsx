@@ -22,10 +22,6 @@ export const Header = () => {
         github
       </Link>
       &nbsp;&nbsp;
-      <Link href="https://twitter.com/superchupu" target="_blank" rel="noreferrer">
-        tw*tter
-      </Link>
-      &nbsp;&nbsp;
       <Link href="https://bsky.app/profile/superchupu.dev" target="_blank" rel="noreferrer">
         bluesky
       </Link>
