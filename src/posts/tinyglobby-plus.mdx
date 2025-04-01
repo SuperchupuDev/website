@@ -1,0 +1,84 @@
+---
+title: "Introducing tinyglobby plus"
+excerpt: "A quick look at the future of tinyglobby"
+coverImage: "/images/tinyglobby-plus.png"
+date: 2025-04-01
+---
+
+Released about 9 months ago, tinyglobby has contributed to the JavaScript ecosystem
+as a globbing library with few dependencies. Since then, the library has gotten more than 9 million
+weekly downloads and many big projects such as Vite have started using it.
+
+We're really excited about the future of tinyglobby, and as such we want to announce
+a new version to further advance what the JavaScript ecosystem is capable of. Introducing tinyglobby plus.
+
+# tinyglobby plus
+
+tinyglobby plus is everything tinyglobby was, and much more. It's an exercise in refinement, showcasing
+the best-of-the-best JavaScript has to offer in 2025. tinyglobby plus redefines the way you interact
+with a library. Ergonomic features allow for a smoother usage, while the redesigned API streamlines every task.
+
+As such, we are proud to announce a total rewrite of tinyglobby featuring the latest state-of-the-art AI features.
+
+## Redefined matching
+
+Thanks to our new OpenAI integration, tinyglobby plus allows you to live your life easier.
+not only does it allow you to use patterns like always, but it implements glob 2.0, which expands
+the glob spec to also allow for natural language. As an added bonus, not only does this allow the library
+to return matched files, it also can answer with natural language. Just ask it
+lunch ideas!
+
+```js
+import { glob } from 'tinyglobby-plus';
+
+const result = await glob(`
+                            Hey there, tinyglobby! I don't have anything to glob today, but i'd like
+                            some help on my next lunch session. Do you have any ideas for a good lunch?
+                          `, {
+                            cwd: '/home/wotrarp/Documents/LUNCH_IDEAS',
+                            openaiKey: 'sk-4B7zZ8HjKq3L0wRv6TmP1aNxQ9YlEfUdX5oC2sVrMhGk',
+                            expandDirectories: false
+                          });
+
+console.log(result);
+//          ^ ["quite certain! since you're a javascript developer, you could try eating the souls of your coworkers. hope this helps!"]
+```
+
+As always, it can match files like usual, but now with natural language:
+
+```js
+import { glob } from 'tinyglobby-plus';
+
+const result = await glob('Return files that end with ".java"', {
+  cwd: '/home/wotrarp/Documents/work/INTERNAL_DO_NOT_LEAK',
+  openaiKey: 'sk-M9v4Xr2tQ7pW1jZc3LmE6oBnA0yU5hFgKdTs8RqJeLb',
+  expandDirectories: false
+});
+
+console.log(result);
+//          ^ [
+//              "BaseNuclearLaunchCode.java",
+//              "NuclearLaunchCode.java",
+//              "NuclearLaunchCodesBuilder.java"
+//            ]
+```
+
+## Interactive website
+
+To keep up to date with the latest trends, you'll be able to use tinyglobby plus in a website too,
+coded using the latest JavaScript frameworks to allow for better productivity.
+
+![chat with tinyglobby](/images/chat.png#247)
+
+You can check a preview of the website [here](/extra/tinyglobby-plus).
+
+## Pricing
+
+As we know tinyglobby was free. However, as many open source developers also know, if something is free,
+you're the product. That's why tinyglobby plus will cost $1000/month. Enjoy!
+
+```sh
+pnpm add tinyglobby-plus
+```
+
+![my dad's cat](/images/luigi.png#400)
