@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "timezone": "Europe/Madrid",
+  "schedule": ["after 2pm on sunday"],
+  "extends": [
+    "config:recommended",
+    "customManagers:biomeVersions",
+    "group:allNonMajor",
+    "helpers:pinGitHubActionDigestsToSemver"
+  ],
+  "rangeStrategy": "bump",
+  "postUpdateOptions": ["pnpmDedupe"]
+}

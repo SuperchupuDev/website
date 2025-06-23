@@ -1,5 +1,5 @@
-import { Cats } from '@/components/Cats';
 import Link from 'next/link';
+import { Cats } from '#components/Cats.tsx';
 
 import './styles.css';
 

@@ -1,6 +1,6 @@
-import { CoverImage } from './CoverImage';
-import { DateContainer } from './DateContainer';
-import { PostTitle } from './PostTitle';
+import { CoverImage } from './CoverImage.tsx';
+import { DateContainer } from './DateContainer.tsx';
+import { PostTitle } from './PostTitle.tsx';
 
 type Props = {
   title: string;

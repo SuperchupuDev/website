@@ -1,7 +1,7 @@
-import { Header } from '@/components/Header';
 import type { Metadata, Viewport } from 'next';
 import { ThemeProvider } from 'next-themes';
 import type { ReactNode } from 'react';
+import { Header } from '#components/Header.tsx';
 
 import './global.css';
 
@@ -18,11 +18,7 @@ export const viewport: Viewport = {
   themeColor: '#ffc0cb'
 };
 
-export default function RootLayout({
-  children
-}: {
-  children: ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>

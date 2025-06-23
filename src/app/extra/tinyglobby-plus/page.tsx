@@ -1,6 +1,6 @@
-import { Chat } from '@/components/Chat';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Chat } from '#components/Chat.tsx';
 
 import './styles.css';
 

@@ -1,6 +1,6 @@
-import { PostPreview } from '@/components/PostPreview';
-import { getAllPosts } from '@/lib/api';
 import type { Metadata } from 'next';
+import { PostPreview } from '#components/PostPreview.tsx';
+import { getAllPosts } from '#lib/api.ts';
 
 import './styles.css';
 

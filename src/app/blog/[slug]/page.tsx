@@ -1,8 +1,8 @@
-import { PostHeader } from '@/components/PostHeader';
-import { type MDXComponents, getAllPosts, getPost } from '@/lib/api';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { PostHeader } from '#components/PostHeader.tsx';
+import { getAllPosts, getPost, type MDXComponents } from '#lib/api.ts';
 
 import './styles.css';
 

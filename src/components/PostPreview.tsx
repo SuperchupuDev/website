@@ -1,6 +1,6 @@
-import type { Post as PostData } from '@/lib/api';
 import Link from 'next/link';
-import { DateContainer } from './DateContainer';
+import type { Post as PostData } from '#lib/api.ts';
+import { DateContainer } from './DateContainer.tsx';
 
 export const PostPreview = ({ frontmatter, slug }: PostData) => {
   return (

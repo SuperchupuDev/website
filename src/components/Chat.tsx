@@ -4,6 +4,7 @@ import { type RefObject, useRef, useState } from 'react';
 
 const buttonOnClick = (value: string, ref: RefObject<HTMLVideoElement>) => {
   if (value) {
+    ref.current.volume = 0.25;
     ref.current.play();
     ref.current.style.visibility = 'visible';
   } else {
@@ -16,7 +17,7 @@ export const Chat = () => {
   const ref = useRef<HTMLVideoElement>(null) as RefObject<HTMLVideoElement>;
   return (
     <>
-      {/* biome-ignore lint/a11y/useMediaCaption: <explanation> */}
+      {/* biome-ignore lint/a11y/useMediaCaption: AHHHH */}
       <video
         ref={ref}
         src="/video/foxy.mp4"
