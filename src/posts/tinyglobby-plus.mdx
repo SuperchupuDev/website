@@ -28,7 +28,7 @@ the glob spec to also allow for natural language. As an added bonus, not only do
 to return matched files, it also can answer with natural language. Just ask it
 lunch ideas!
 
-```js
+```ts
 import { glob } from 'tinyglobby-plus';
 
 const result = await glob(`
@@ -42,11 +42,21 @@ const result = await glob(`
 
 console.log(result);
 //          ^ ["quite certain! since you're a javascript developer, you could try eating the souls of your coworkers. hope this helps!"]
+
+// ---cut-after---
+// @filename: tinyglobby-plus.d.ts
+import { GlobOptions as Options } from 'tinyglobby';
+declare module 'tinyglobby-plus';
+declare const glob: (patterns: string | string[], options?: GlobOptions) => Promise<string[]>;
+export interface GlobOptions extends Options {
+  openaiKey?: string
+};
+export { glob };
 ```
 
 As always, it can match files like usual, but now with natural language:
 
-```js
+```ts
 import { glob } from 'tinyglobby-plus';
 
 const result = await glob('Return files that end with ".java"', {
@@ -61,6 +71,16 @@ console.log(result);
 //              "NuclearLaunchCode.java",
 //              "NuclearLaunchCodesBuilder.java"
 //            ]
+
+// ---cut-after---
+// @filename: tinyglobby-plus.d.ts
+import { GlobOptions as Options } from 'tinyglobby';
+declare module 'tinyglobby-plus';
+declare const glob: (patterns: string | string[], options?: GlobOptions) => Promise<string[]>;
+export interface GlobOptions extends Options {
+  openaiKey?: string
+};
+export { glob };
 ```
 
 ## Interactive website

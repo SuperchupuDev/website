@@ -44,7 +44,10 @@ const components = {
     const height = Number(props.src?.split('#')[1] ?? 0);
     return <Image {...props} src={props.src?.split('#')[0] ?? ''} alt={props.alt ?? ''} width={600} height={height} />;
   },
-  code: props => <Code {...props} />
+  code: ({ className, ...props }) => {
+    const lang = /^language-(\w+)$/.exec(className)?.[1];
+    return <Code lang={lang} {...props} />;
+  }
 } satisfies MDXComponents;
 
 export default async function PostPage(props: Params) {

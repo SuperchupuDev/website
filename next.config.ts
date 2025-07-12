@@ -5,6 +5,7 @@ export default {
     unoptimized: true
   },
   output: 'export',
+  serverExternalPackages: ['@shikijs/twoslash'],
   typescript: {
     ignoreBuildErrors: true
   }

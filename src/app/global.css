@@ -10,3 +10,7 @@ header {
   border-radius: 15px;
   padding: 15px;
 }
+
+.shiki span {
+  --twoslash-popup-bg: #0d1117;
+}
