@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Code } from '#components/Code.tsx';
 import { PostHeader } from '#components/PostHeader.tsx';
 import { getAllPosts, getPost, type MDXComponents } from '#lib/api.ts';
 
@@ -42,7 +43,8 @@ const components = {
   img: ({ ref, ...props }) => {
     const height = Number(props.src?.split('#')[1] ?? 0);
     return <Image {...props} src={props.src?.split('#')[0] ?? ''} alt={props.alt ?? ''} width={600} height={height} />;
-  }
+  },
+  code: props => <Code {...props} />
 } satisfies MDXComponents;
 
 export default async function PostPage(props: Params) {

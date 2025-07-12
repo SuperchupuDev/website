@@ -5,3 +5,8 @@ header {
   right: 10px;
   text-align: right;
 }
+
+.shiki {
+  border-radius: 15px;
+  padding: 15px;
+}
