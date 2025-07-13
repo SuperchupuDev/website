@@ -1,6 +1,14 @@
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { transformerTwoslash } from '@shikijs/twoslash';
 import { compileMDX } from 'next-mdx-remote/rsc';
+import {
+  type BundledHighlighterOptions,
+  type BundledLanguage,
+  type BundledTheme,
+  createHighlighter,
+  type ShikiTransformer
+} from 'shiki';
 
 export type PostContent = Awaited<ReturnType<typeof compileMDX>>['content'];
 export type MDXComponents = Parameters<typeof compileMDX>[0]['components'];
@@ -44,4 +52,22 @@ export async function getAllPosts(withHidden: boolean): Promise<Post[]> {
     }
   }
   return posts.sort((a, b) => (a.frontmatter.date > b.frontmatter.date ? -1 : 1));
+}
+
+let highlighter: Awaited<ReturnType<typeof import('shiki').createHighlighter>>;
+export async function getHighlighter<L extends BundledLanguage, T extends BundledTheme>(
+  options: BundledHighlighterOptions<L, T>
+) {
+  if (!highlighter) {
+    highlighter = await createHighlighter(options);
+  }
+  return highlighter;
+}
+
+let transformers: ShikiTransformer[];
+export function getTransformers() {
+  if (!transformers) {
+    transformers = [transformerTwoslash()];
+  }
+  return transformers;
 }

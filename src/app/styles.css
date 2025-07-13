@@ -80,3 +80,15 @@
     transform: translateX(-25%);
   }
 }
+
+@media (prefers-reduced-motion) {
+  .pronouns {
+    animation: none !important;
+    color: var(--pronouns);
+  }
+  .marquee-left,
+  .marquee-up,
+  .marquee-bounce {
+    animation: none !important;
+  }
+}

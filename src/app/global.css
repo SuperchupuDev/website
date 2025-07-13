@@ -7,10 +7,18 @@ header {
 }
 
 .shiki {
-  border-radius: 15px;
+  border-radius: 8px;
   padding: 15px;
 }
 
-.shiki span {
-  --twoslash-popup-bg: #0d1117;
+[data-theme="dark"] {
+  .shiki,
+  .shiki span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+    --twoslash-popup-bg: var(--shiki-dark-bg) !important;
+  }
 }

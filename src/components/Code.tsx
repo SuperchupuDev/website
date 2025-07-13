@@ -1,19 +1,25 @@
-import { transformerTwoslash } from '@shikijs/twoslash';
-import dedent from 'dedent';
-import { type BundledLanguage, codeToHtml } from 'shiki';
+import { getHighlighter, getTransformers } from '#lib/api.ts';
 
 import '@shikijs/twoslash/style-rich.css';
 
 interface CodeProps {
   children: string;
-  lang: BundledLanguage;
+  lang: 'js' | 'ts' | 'sh';
 }
 
-export async function Code(props: CodeProps) {
-  const out = await codeToHtml(dedent(props.children), {
+const { codeToHtml } = await getHighlighter({
+  langs: ['js', 'ts', 'sh'],
+  themes: ['github-light-default', 'github-dark-default']
+});
+
+export function Code(props: CodeProps) {
+  const out = codeToHtml(props.children, {
     lang: props.lang,
-    theme: 'github-dark-default',
-    transformers: [transformerTwoslash()]
+    themes: {
+      light: 'github-light-default',
+      dark: 'github-dark-default'
+    },
+    transformers: getTransformers()
   });
 
   // biome-ignore lint/security/noDangerouslySetInnerHtml: needed

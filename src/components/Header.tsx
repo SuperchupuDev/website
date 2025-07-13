@@ -26,6 +26,10 @@ export const Header = () => {
         bluesky
       </Link>
       &nbsp;&nbsp;
+      <Link href="https://github.com/sponsors/SuperchupuDev" target="_blank" rel="noreferrer">
+        sponsor
+      </Link>
+      &nbsp;&nbsp;
       <select
         id="theme-selector"
         aria-label="Theme selector"

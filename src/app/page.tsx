@@ -14,7 +14,8 @@ export default function Page() {
         </sup>{' '}
         i love coding :3
       </h2>
-      am a cat who just happens to like do stuff. i also play geometry dash
+      am a spanish cat who for some reason likes to code in javascript. i like to contribute to open source projects in
+      my free time.
       <br />
       heres some stuff i code
       <br />
