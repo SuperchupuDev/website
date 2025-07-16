@@ -19,9 +19,8 @@ export default function Page() {
       <br />
       heres some stuff i code
       <br />
-      <Link href="https://github.com/SuperchupuDev/tinyglobby" target="_blank">
-        tinyglobby
-      </Link>
+      <br />
+      <Link href="/tinyglobby">tinyglobby</Link>
       <br />
       <Link href="https://thefunniestcatsofalltime.pages.dev" target="_blank">
         thefunniestcatsofalltime.pages.dev

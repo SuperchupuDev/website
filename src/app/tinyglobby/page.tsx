@@ -1,0 +1,85 @@
+import dedent from 'dedent';
+import Link from 'next/link';
+import { Code } from '#components/Code.tsx';
+import { default as json } from './projects.json';
+
+import './styles.css';
+
+export default function Page() {
+  return (
+    <main>
+      <h1>
+        tinyglobby (
+        <Link target="_blank" href={'https://github.com/SuperchupuDev/tinyglobby'}>
+          source
+        </Link>
+        ,{' '}
+        <Link target="_blank" href={'https://npmjs.com/tinyglobby'}>
+          npm
+        </Link>
+        )
+      </h1>
+      <h2>A fast and minimal alternative to globby and fast-glob</h2>
+      <Code lang="ts">
+        {dedent`
+          import { glob, globSync } from 'tinyglobby';
+
+          await glob(['files/*.ts', '!**/*.d.ts'], { cwd: 'src' });
+          globSync('src/**/*.ts', { ignore: '**/*.d.ts' });
+        `}
+      </Code>
+      <h3>
+        <Link href="/tinyglobby/documentation">Documentation</Link>
+      </h3>
+      <h3 id="used-by">
+        Used by
+        <div id="used-by-entries">
+          <div>
+            {/* should i duplicate this list? no. but it works */}
+            {[...json, ...json].map((entry, i) => (
+              <div key={`${entry.name}-${i}`}>
+                <Link target="_blank" href={`https://github.com/${entry.repo}`}>
+                  {entry.name}
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </h3>
+      <div
+        style={{
+          borderRadius: '8px',
+          width: '760px',
+          maxWidth: 'calc(100vw - 15px)',
+          height: '490px',
+          overflowX: 'auto',
+          overflowY: 'hidden',
+          position: 'relative'
+        }}
+      >
+        <iframe
+          src="https://npm.chart.dev/embed/tinyglobby?primary=violet&gray=cool&theme=dark"
+          allow="clipboard-write;"
+          style={{
+            border: 'hidden',
+            position: 'absolute',
+            top: '-90px',
+            left: 0,
+            width: '760px',
+            height: '580px'
+          }}
+          title="npm download chart"
+        />
+      </div>
+      <sup>
+        Have a big project that uses tinyglobby?{' '}
+        <Link
+          target="_blank"
+          href="https://github.com/SuperchupuDev/website/blob/main/src/app/tinyglobby/projects.json"
+        >
+          Add it to the list
+        </Link>
+      </sup>
+    </main>
+  );
+}

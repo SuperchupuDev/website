@@ -1,0 +1,74 @@
+[
+  {
+    "name": "vite",
+    "repo": "vitejs/vite"
+  },
+  {
+    "name": "pnpm",
+    "repo": "pnpm/pnpm"
+  },
+  {
+    "name": "node-gyp",
+    "repo": "nodejs/node-gyp"
+  },
+  {
+    "name": "eslint-import-resolver-typescript",
+    "repo": "import-js/eslint-import-resolver-typescript"
+  },
+  {
+    "name": "vitest",
+    "repo": "vitest-dev/vitest"
+  },
+  {
+    "name": "copy-webpack-plugin",
+    "repo": "webpack-contrib/copy-webpack-plugin"
+  },
+  {
+    "name": "storybook",
+    "repo": "storybookjs/storybook"
+  },
+  {
+    "name": "nx",
+    "repo": "nrwl/nx"
+  },
+  {
+    "name": "sort-package-json",
+    "repo": "keithamus/sort-package-json"
+  },
+  {
+    "name": "unimport",
+    "repo": "unjs/unimport"
+  },
+  {
+    "name": "tsup",
+    "repo": "egoist/tsup"
+  },
+  {
+    "name": "lerna",
+    "repo": "lerna/lerna"
+  },
+  {
+    "name": "cspell",
+    "repo": "streetsidesoftware/cspell"
+  },
+  {
+    "name": "nuxt",
+    "repo": "nuxt/nuxt"
+  },
+  {
+    "name": "postcss-mixins",
+    "repo": "postcss/postcss-mixins"
+  },
+  {
+    "name": "astro",
+    "repo": "withastro/astro"
+  },
+  {
+    "name": "unocss",
+    "repo": "unocss/unocss"
+  },
+  {
+    "name": "vitepress",
+    "repo": "vuejs/vitepress"
+  }
+]

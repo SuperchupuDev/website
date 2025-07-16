@@ -1,0 +1,134 @@
+main {
+  justify-content: center;
+  max-width: calc(100vw - 16px);
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+ul {
+  padding-left: 18px;
+}
+
+.sidebar {
+  width: 200px;
+  position: fixed;
+  height: 100vh;
+  overflow: auto;
+}
+
+.sidebar-overlay,
+.sidebar-content,
+.sidebar-button {
+  display: none;
+}
+
+@media (max-width: 1300px) {
+  .sidebar {
+    display: none;
+  }
+
+  .sidebar-button {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    top: 10px;
+    left: 7px;
+    padding: 8px;
+    width: 30px;
+    height: 30px;
+    border: solid gray;
+    border-width: 2px;
+    border-radius: 4px;
+    z-index: 100;
+  }
+
+  dialog.sidebar-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    border: none;
+    padding: 0;
+    margin: 0;
+    pointer-events: none; /* prevent ghost clicks */
+    visibility: hidden;
+  }
+
+  dialog.sidebar-dialog[open] {
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  .sidebar-content {
+    display: block;
+    width: 200px;
+    padding: 1rem;
+    background-color: inherit;
+    overflow-y: auto;
+  }
+
+  sidebar-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    z-index: 0;
+  }
+}
+
+.option {
+  padding-bottom: 10px;
+}
+
+.shiki {
+  font-size: 15px;
+}
+
+#used-by {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 400px;
+  gap: 7px;
+}
+
+#used-by-entries {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  height: 1em;
+  flex: 1;
+}
+
+#used-by-entries > div {
+  display: flex;
+  flex-direction: column;
+  animation: scroll-up 25s linear infinite;
+}
+
+@media (prefers-reduced-motion) {
+  #used-by-entries > div {
+    animation: none !important;
+  }
+
+  #used-by-entries {
+    overflow-y: auto;
+    height: 40px;
+  }
+}
+
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
