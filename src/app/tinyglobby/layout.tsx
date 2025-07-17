@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import type { ReactNode } from 'react';
-import { SidebarContent } from '#components/SidebarContent.tsx';
+import { SidebarEntry } from '#components/SidebarEntry.tsx';
 
 export const metadata: Metadata = {
   title: { template: '%s | tinyglobby', default: 'tinyglobby' },
@@ -10,16 +11,46 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <button type="button" popoverTarget="sidebar-dialog" popoverTargetAction="show" className="sidebar-button">
+      <button id="sidebar-button" type="button" popoverTarget="sidebar" popoverTargetAction="show">
         ☰
       </button>
-      <dialog id="sidebar-dialog" popover="auto">
-        <aside>
-          <SidebarContent />
-        </aside>
-      </dialog>
-      <aside id="main-sidebar">
-        <SidebarContent />
+      <aside id="sidebar" popover="auto">
+        <ul>
+          <li>
+            <Link href="/tinyglobby">tinyglobby</Link>
+          </li>
+          <li>
+            <Link href="/tinyglobby/documentation">documentation</Link>
+          </li>
+          <ul>
+            <li>
+              <Link href="/tinyglobby/documentation#api">api</Link>
+            </li>
+            <ul>
+              <SidebarEntry name="glob" />
+              <SidebarEntry name="globSync" />
+              <SidebarEntry name="convertPathToPattern" />
+              <SidebarEntry name="escapePath" />
+              <SidebarEntry name="isDynamicPattern" />
+            </ul>
+            <li>
+              <Link href="/tinyglobby/documentation#options">options</Link>
+            </li>
+            <ul>
+              <SidebarEntry name="absolute" />
+              <SidebarEntry name="caseSensitiveMatch" />
+              <SidebarEntry name="cwd" />
+              <SidebarEntry name="debug" />
+              <SidebarEntry name="deep" />
+              <SidebarEntry name="dot" />
+              <SidebarEntry name="expandDirectories" />
+              <SidebarEntry name="followSymbolicLinks" />
+              <SidebarEntry name="ignore" />
+              <SidebarEntry name="onlyDirectories" />
+              <SidebarEntry name="onlyFiles" />
+            </ul>
+          </ul>
+        </ul>
       </aside>
       {children}
     </>
