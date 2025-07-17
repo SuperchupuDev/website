@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { SidebarButton } from '#components/SidebarButton.tsx';
 import { SidebarContent } from '#components/SidebarContent.tsx';
 
 export const metadata: Metadata = {
@@ -11,10 +10,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <SidebarButton />
-      <div className="sidebar">
+      <button type="button" popoverTarget="sidebar-dialog" popoverTargetAction="show" className="sidebar-button">
+        ☰
+      </button>
+      <dialog id="sidebar-dialog" popover="auto">
+        <aside>
+          <SidebarContent />
+        </aside>
+      </dialog>
+      <aside id="main-sidebar">
         <SidebarContent />
-      </div>
+      </aside>
       {children}
     </>
   );
