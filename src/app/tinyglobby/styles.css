@@ -14,51 +14,57 @@ ul {
   padding-left: 18px;
 }
 
-#main-sidebar {
+#sidebar {
+  display: block;
   position: fixed;
   height: 100vh;
   overflow-y: auto;
 }
 
-.sidebar-content {
-  display: block;
+[popover] {
+  all: unset;
 }
 
-.sidebar-button {
+#sidebar-button {
   display: none;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  top: 10px;
+  left: 7px;
+  padding: 8px;
+  width: 30px;
+  height: 30px;
+  border: solid gray;
+  border-width: 1px;
+  border-radius: 4px;
+  z-index: 100;
 }
 
 @media (max-width: 1300px) {
-  #main-sidebar {
+  #sidebar {
     display: none;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    border: none;
+    padding: 1rem;
+    margin: 0;
+    width: 200px;
+    height: fit-content;
   }
 
-  .sidebar-button {
+  [popover] {
+    all: revert;
+  }
+
+  #sidebar:popover-open {
+    display: block;
+  }
+
+  #sidebar-button {
     display: flex;
-    position: fixed;
-    align-items: center;
-    justify-content: center;
-    top: 10px;
-    left: 7px;
-    padding: 8px;
-    width: 30px;
-    height: 30px;
-    border: solid gray;
-    border-width: 1px;
-    border-radius: 4px;
-    z-index: 100;
   }
-}
-
-#sidebar-dialog {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 50;
-  border: none;
-  padding: 1rem;
-  margin: 0;
-  width: 200px;
 }
 
 .option {
@@ -93,13 +99,13 @@ ul {
 }
 
 @media (prefers-reduced-motion) {
-  #used-by-entries > div {
-    animation: none !important;
-  }
-
   #used-by-entries {
     overflow-y: auto;
     height: 40px;
+  }
+
+  #used-by-entries > div {
+    animation: none !important;
   }
 }
 
