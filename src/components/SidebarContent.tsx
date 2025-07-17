@@ -10,7 +10,7 @@ const EntryOrOption = ({ name }: { name: keyof tinyglobby.GlobOptions | keyof ty
 );
 
 export const SidebarContent = () => (
-  <ul>
+  <ul className="sidebar-content">
     <li>
       <Link href="/tinyglobby">tinyglobby</Link>
     </li>
