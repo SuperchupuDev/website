@@ -14,21 +14,22 @@ ul {
   padding-left: 18px;
 }
 
-.sidebar {
-  width: 200px;
+#main-sidebar {
   position: fixed;
   height: 100vh;
-  overflow: auto;
+  overflow-y: auto;
 }
 
-.sidebar-overlay,
-.sidebar-content,
+.sidebar-content {
+  display: block;
+}
+
 .sidebar-button {
   display: none;
 }
 
 @media (max-width: 1300px) {
-  .sidebar {
+  #main-sidebar {
     display: none;
   }
 
@@ -43,43 +44,21 @@ ul {
     width: 30px;
     height: 30px;
     border: solid gray;
-    border-width: 2px;
+    border-width: 1px;
     border-radius: 4px;
     z-index: 100;
   }
+}
 
-  dialog.sidebar-dialog {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 50;
-    border: none;
-    padding: 0;
-    margin: 0;
-    pointer-events: none; /* prevent ghost clicks */
-    visibility: hidden;
-  }
-
-  dialog.sidebar-dialog[open] {
-    pointer-events: auto;
-    visibility: visible;
-  }
-
-  .sidebar-content {
-    display: block;
-    width: 200px;
-    padding: 1rem;
-    background-color: inherit;
-    overflow-y: auto;
-  }
-
-  sidebar-content::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: inherit;
-    z-index: 0;
-  }
+#sidebar-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  border: none;
+  padding: 1rem;
+  margin: 0;
+  width: 200px;
 }
 
 .option {
