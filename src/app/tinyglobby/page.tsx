@@ -1,7 +1,8 @@
 import dedent from 'dedent';
 import Link from 'next/link';
+import type { CSSProperties } from 'react';
 import { Code } from '#components/Code.tsx';
-import { default as json } from './projects.json';
+import projects from './projects.json' with { type: 'json' };
 
 import './styles.css';
 
@@ -32,18 +33,18 @@ export default function Page() {
         <Link href="/tinyglobby/documentation">Documentation</Link>
       </h3>
       <h3 id="used-by">
-        Used by
-        <div id="used-by-entries">
-          <div>
-            {/* should i duplicate this list? no. but it works */}
-            {[...json, ...json].map((entry, i) => (
-              <div key={`${entry.name}-${i}`}>
-                <Link target="_blank" href={`https://github.com/${entry.repo}`}>
-                  {entry.name}
-                </Link>
-              </div>
-            ))}
-          </div>
+        Used by{' '}
+        <div id="used-by-entries" style={{ '--marquee-count': projects.length } as CSSProperties}>
+          {projects.map((entry, i) => (
+            <Link
+              style={{ '--marquee-item-index': i } as CSSProperties}
+              key={entry.name}
+              target="_blank"
+              href={`https://github.com/${entry.repo}`}
+            >
+              {entry.name}
+            </Link>
+          ))}
         </div>
       </h3>
       <div
