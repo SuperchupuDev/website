@@ -79,8 +79,9 @@ ul {
   display: flex;
   align-items: center;
   overflow: hidden;
+  white-space: pre-wrap;
   width: 400px;
-  gap: 7px;
+  row-gap: 6px;
 }
 
 #used-by-entries {
@@ -92,10 +93,31 @@ ul {
   flex: 1;
 }
 
-#used-by-entries > div {
+#used-by-entries > * {
   display: flex;
   flex-direction: column;
-  animation: scroll-up 25s linear infinite;
+  width: fit-content;
+
+  /*
+    rare css-only marquee with no duplication
+    i have no idea how this works
+    https://codepen.io/bitgrip-thomas/pen/mdZbgXN
+  */
+  --marquee-item-position: calc(var(--marquee-item-index) + 1);
+  --duration: 40s;
+  --duration-per-item: calc(var(--duration) / var(--marquee-count));
+  --delay: calc(-1 * var(--duration-per-item) * (var(--marquee-count) - var(--marquee-item-position)));
+
+  animation: scroll-up var(--duration) var(--delay) linear infinite;
+}
+
+@keyframes scroll-up {
+  from {
+    translate: 0 calc(100% * (var(--marquee-count) - var(--marquee-item-position)));
+  }
+  to {
+    translate: 0 calc(-100% * var(--marquee-item-position));
+  }
 }
 
 @media (prefers-reduced-motion) {
@@ -106,14 +128,5 @@ ul {
 
   #used-by-entries > div {
     animation: none !important;
-  }
-}
-
-@keyframes scroll-up {
-  0% {
-    transform: translateY(0%);
-  }
-  100% {
-    transform: translateY(-50%);
   }
 }
