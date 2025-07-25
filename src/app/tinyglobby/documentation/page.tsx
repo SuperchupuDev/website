@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { convertPathToPattern, type GlobOptions } from 'tinyglobby';
+import { version } from 'tinyglobby/package.json' with { type: 'json' };
 import { Code } from '#components/Code.tsx';
 
 import '../styles.css';
@@ -14,7 +15,9 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <h1>tinyglobby documentation</h1>
+      <h1>
+        tinyglobby documentation <sub>v{version}</sub>
+      </h1>
       <h2 id="api">API</h2>
       <APIEntry name="glob">
         Asynchronously match files following a glob pattern.
@@ -214,7 +217,7 @@ function APIEntry(props: APIEntryProps) {
   return (
     <div className="entry">
       <h3 id={props.name}>
-        <Code lang="ts">
+        <Code meta="twoslash no-jsdoc" lang="ts">
           {dedent`
             import { ${props.name} } from 'tinyglobby';
             // ---cut---
@@ -239,7 +242,7 @@ function APIOption(props: APIOptionProps) {
   return (
     <div className="option">
       <h3 id={props.name}>
-        <Code lang="ts">
+        <Code meta="twoslash no-jsdoc" lang="ts">
           {dedent`
             import type { GlobOptions } from 'tinyglobby';
             declare const ${props.name}: GlobOptions['${props.name}'];
