@@ -17,12 +17,16 @@ ul {
 #sidebar {
   display: block;
   position: fixed;
-  height: 100vh;
+  max-height: 100vh;
   overflow-y: auto;
 }
 
 [popover] {
   all: unset;
+}
+
+::backdrop {
+  backdrop-filter: blur(3px);
 }
 
 #sidebar-button {
@@ -51,7 +55,6 @@ ul {
     padding: 1rem;
     margin: 0;
     width: 200px;
-    height: fit-content;
   }
 
   [popover] {

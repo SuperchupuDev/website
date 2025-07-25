@@ -67,7 +67,7 @@ export async function getHighlighter<L extends BundledLanguage, T extends Bundle
 let transformers: ShikiTransformer[];
 export function getTransformers() {
   if (!transformers) {
-    transformers = [transformerTwoslash()];
+    transformers = [transformerTwoslash({ explicitTrigger: true })];
   }
   return transformers;
 }

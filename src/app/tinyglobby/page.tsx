@@ -47,31 +47,20 @@ export default function Page() {
           ))}
         </div>
       </h3>
-      <div
+      <iframe
+        src="https://npm.chart.dev/embed/tinyglobby?primary=violet&gray=cool&theme=dark"
+        allow="clipboard-write"
         style={{
+          border: 'hidden',
           borderRadius: '8px',
+          overflow: 'hidden',
+          height: '630px',
           width: '760px',
-          maxWidth: 'calc(100vw - 15px)',
-          height: '490px',
-          overflowX: 'auto',
-          overflowY: 'hidden',
-          position: 'relative'
+          maxWidth: '100%'
         }}
-      >
-        <iframe
-          src="https://npm.chart.dev/embed/tinyglobby?primary=violet&gray=cool&theme=dark"
-          allow="clipboard-write;"
-          style={{
-            border: 'hidden',
-            position: 'absolute',
-            top: '-90px',
-            left: 0,
-            width: '760px',
-            height: '580px'
-          }}
-          title="npm download chart"
-        />
-      </div>
+        title="npm download chart"
+      />
+      <br />
       <sup>
         Have a big project that uses tinyglobby?{' '}
         <Link
