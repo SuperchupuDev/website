@@ -4,6 +4,7 @@ import '@shikijs/twoslash/style-rich.css';
 
 interface CodeProps {
   children: string;
+  meta?: string;
   lang: 'js' | 'ts' | 'sh';
 }
 
@@ -13,14 +14,19 @@ const { codeToHtml } = await getHighlighter({
 });
 
 export function Code(props: CodeProps) {
-  const out = codeToHtml(props.children, {
+  let out = codeToHtml(props.children, {
     lang: props.lang,
+    meta: { __raw: props.meta },
     themes: {
       light: 'github-light-default',
       dark: 'github-dark-default'
     },
     transformers: getTransformers()
   });
+
+  if (props.meta?.split(' ').includes('no-jsdoc')) {
+    out = out.replace('<pre class="', '<pre class="no-jsdoc ');
+  }
 
   // biome-ignore lint/security/noDangerouslySetInnerHtml: needed
   return <div dangerouslySetInnerHTML={{ __html: out }} />;
