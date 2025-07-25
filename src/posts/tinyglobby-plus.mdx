@@ -42,16 +42,6 @@ const result = await glob(`
 
 console.log(result);
 //          ^ ["quite certain! since you're a javascript developer, you could try eating the souls of your coworkers. hope this helps!"]
-
-// ---cut-after---
-// @filename: tinyglobby-plus.d.ts
-import { GlobOptions as Options } from 'tinyglobby';
-declare module 'tinyglobby-plus';
-declare const glob: (patterns: string | string[], options?: GlobOptions) => Promise<string[]>;
-export interface GlobOptions extends Options {
-  openaiKey?: string
-};
-export { glob };
 ```
 
 As always, it can match files like usual, but now with natural language:
@@ -71,16 +61,6 @@ console.log(result);
 //              "NuclearLaunchCode.java",
 //              "NuclearLaunchCodesBuilder.java"
 //            ]
-
-// ---cut-after---
-// @filename: tinyglobby-plus.d.ts
-import { GlobOptions as Options } from 'tinyglobby';
-declare module 'tinyglobby-plus';
-declare const glob: (patterns: string | string[], options?: GlobOptions) => Promise<string[]>;
-export interface GlobOptions extends Options {
-  openaiKey?: string
-};
-export { glob };
 ```
 
 ## Interactive website
