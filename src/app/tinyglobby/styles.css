@@ -6,10 +6,6 @@ main {
   width: 900px;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 ul {
   padding-left: 18px;
 }
@@ -19,14 +15,13 @@ ul {
   position: fixed;
   max-height: 100vh;
   overflow-y: auto;
+  &::backdrop {
+    backdrop-filter: blur(3px);
+  }
 }
 
 [popover] {
   all: unset;
-}
-
-::backdrop {
-  backdrop-filter: blur(3px);
 }
 
 #sidebar-button {
@@ -55,14 +50,13 @@ ul {
     padding: 1rem;
     margin: 0;
     width: 200px;
+    &:popover-open {
+      display: block;
+    }
   }
 
   [popover] {
     all: revert;
-  }
-
-  #sidebar:popover-open {
-    display: block;
   }
 
   #sidebar-button {
