@@ -49,7 +49,6 @@ export default function Page() {
       </h3>
       <iframe
         src="https://npm.chart.dev/embed/tinyglobby?primary=violet&gray=cool&theme=dark"
-        allow="clipboard-write"
         style={{
           border: 'hidden',
           borderRadius: '8px',
