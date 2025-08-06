@@ -28,6 +28,10 @@
     "repo": "storybookjs/storybook"
   },
   {
+    "name": "ts-morph",
+    "repo": "dsherret/ts-morph"
+  },
+  {
     "name": "nx",
     "repo": "nrwl/nx"
   },
@@ -46,6 +50,14 @@
   {
     "name": "lerna",
     "repo": "lerna/lerna"
+  },
+  {
+    "name": "@swc/cli",
+    "repo": "swc-project/pkgs"
+  },
+  {
+    "name": "@angular/build",
+    "repo": "angular/angular-cli"
   },
   {
     "name": "cspell",
