@@ -1,9 +1,21 @@
 header {
-  position: absolute;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: flex-end;
   width: 100%;
-  top: 10px;
-  right: 10px;
-  text-align: right;
+
+  @media (min-width: 960px) {
+    position: fixed;
+    height: 40px;
+    top: 0;
+    left: 0;
+  }
+
+  :not(nav) {
+    text-align: center;
+    margin: 0 4px;
+  }
 }
 
 .shiki {

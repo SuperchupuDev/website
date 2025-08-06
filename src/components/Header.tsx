@@ -14,22 +14,19 @@ export const Header = () => {
 
   return (
     <header>
-      <Link href="/">home</Link>
-      &nbsp;&nbsp;
-      <Link href="/blog">blog</Link>
-      &nbsp;&nbsp;
-      <Link href="https://github.com/SuperchupuDev" target="_blank" rel="noreferrer">
-        github
-      </Link>
-      &nbsp;&nbsp;
-      <Link href="https://bsky.app/profile/superchupu.dev" target="_blank" rel="noreferrer">
-        bluesky
-      </Link>
-      &nbsp;&nbsp;
-      <Link href="https://github.com/sponsors/SuperchupuDev" target="_blank" rel="noreferrer">
-        sponsor
-      </Link>
-      &nbsp;&nbsp;
+      <nav>
+        <Link href="/">home</Link>
+        <Link href="/blog">blog</Link>
+        <Link href="https://github.com/SuperchupuDev" target="_blank" rel="noreferrer">
+          github
+        </Link>
+        <Link href="https://bsky.app/profile/superchupu.dev" target="_blank" rel="noreferrer">
+          bluesky
+        </Link>
+        <Link href="https://github.com/sponsors/SuperchupuDev" target="_blank" rel="noreferrer">
+          sponsor
+        </Link>
+      </nav>
       <select
         id="theme-selector"
         aria-label="Theme selector"
