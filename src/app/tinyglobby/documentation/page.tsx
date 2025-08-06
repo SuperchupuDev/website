@@ -102,7 +102,7 @@ export default function Page() {
         <br />
         <ul>
           <li>
-            Doesn't necessarily return false on patterns that include <code>\</code>.
+            Doesn't necessarily return <code>false</code> on patterns that include <code>\</code>.
           </li>
           <li>
             Returns <code>true</code> if the pattern includes parentheses, regardless of them representing one single
@@ -112,7 +112,7 @@ export default function Page() {
             Returns <code>true</code> for unfinished glob extensions i.e. <code>(h</code>, <code>+(h</code>.
           </li>
           <li>
-            Returns<code>true</code> for unfinished brace expansions as long as they include <code>,</code> or{' '}
+            Returns <code>true</code> for unfinished brace expansions as long as they include <code>,</code> or{' '}
             <code>..</code>.
           </li>
         </ul>
@@ -148,11 +148,9 @@ export default function Page() {
         as doing so can harm performance due to having to recalculate relative paths.
         <Code lang="ts">
           {dedent`
-            declare const searchDir: string;
-            // ---cut---
             import { glob } from 'tinyglobby';
 
-            // Avoid this - will calculate it relative to \`process.cwd()\`!:
+            // Avoid this - will calculate it relative to \`process.cwd()\`!
             await glob(\`\${searchDir}/*.ts\`, {
               absolute: true
             });
@@ -190,6 +188,11 @@ export default function Page() {
         Whether to traverse and include symbolic links. Can slightly affect performance.
       </APIOption>
       <hr />
+      <APIOption name="globstar" default="true">
+        Enables support for matching nested directories with globstars (<code>**</code>). If false, <code>**</code>{' '}
+        behaves exactly like `*`.
+      </APIOption>
+      <hr />
       <APIOption name="ignore" default="[]">
         Glob patterns to exclude from the results.
       </APIOption>
@@ -204,6 +207,20 @@ export default function Page() {
       <hr />
       <APIOption name="onlyFiles" default="true">
         Enable to only return files.
+      </APIOption>
+      <hr />
+      <APIOption name="signal" default="undefined">
+        An <code>AbortSignal</code> to abort crawling the file system. Useful for setting a timeout.
+        <Code lang="ts">
+          {dedent`
+            import { glob } from 'tinyglobby';
+
+            // Stops crawling if taking too long
+            await glob('**', {
+              signal: AbortSignal.timeout(1000)
+            });
+          `}
+        </Code>
       </APIOption>
     </main>
   );

@@ -45,9 +45,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <SidebarEntry name="dot" />
               <SidebarEntry name="expandDirectories" />
               <SidebarEntry name="followSymbolicLinks" />
+              <SidebarEntry name="globstar" />
               <SidebarEntry name="ignore" />
               <SidebarEntry name="onlyDirectories" />
               <SidebarEntry name="onlyFiles" />
+              <SidebarEntry name="signal" />
             </ul>
           </ul>
         </ul>
