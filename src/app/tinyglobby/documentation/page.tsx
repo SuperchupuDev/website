@@ -144,8 +144,8 @@ export default function Page() {
         is set.
         <br />
         <br />
-        It is very important to avoid globbing outside this directory when possible, even with absolute paths enabled,
-        as doing so can harm performance due to having to recalculate relative paths.
+        It is important to avoid globbing outside this directory when possible, even with absolute paths enabled, as
+        doing so can harm performance due to having to recalculate relative paths.
         <Code lang="ts">
           {dedent`
             import { glob } from 'tinyglobby';
@@ -189,7 +189,7 @@ export default function Page() {
       </APIOption>
       <hr />
       <APIOption name="globstar" default="true">
-        Enables support for matching nested directories with globstars (<code>**</code>). If false, <code>**</code>{' '}
+        Enables support for matching nested directories with globstars (<code>**</code>). If `false`, <code>**</code>{' '}
         behaves exactly like `*`.
       </APIOption>
       <hr />
@@ -210,7 +210,7 @@ export default function Page() {
       </APIOption>
       <hr />
       <APIOption name="signal" default="undefined">
-        An <code>AbortSignal</code> to abort crawling the file system. Useful for setting a timeout.
+        An <code>AbortSignal</code> to abort crawling the file system.
         <Code lang="ts">
           {dedent`
             import { glob } from 'tinyglobby';
