@@ -16,7 +16,7 @@ export default function Page() {
   return (
     <main>
       <h1>
-        tinyglobby documentation <sub>v{version}</sub>
+        tinyglobby documentation <small className="sub">v{version}</small>
       </h1>
       <h2 id="api">API</h2>
       <APIEntry name="glob">

@@ -10,15 +10,18 @@ export default function Page() {
   return (
     <main>
       <h1>
-        tinyglobby (
-        <Link target="_blank" href={'https://github.com/SuperchupuDev/tinyglobby'}>
-          source
-        </Link>
-        ,{' '}
-        <Link target="_blank" href={'https://npmjs.com/tinyglobby'}>
-          npm
-        </Link>
-        )
+        tinyglobby{' '}
+        <small className="sub">
+          (
+          <Link target="_blank" href={'https://github.com/SuperchupuDev/tinyglobby'}>
+            source
+          </Link>
+          ,{' '}
+          <Link target="_blank" href={'https://npmjs.com/tinyglobby'}>
+            npm
+          </Link>
+          )
+        </small>
       </h1>
       <h2>A fast and minimal alternative to globby and fast-glob</h2>
       <Code lang="ts">
@@ -52,7 +55,7 @@ export default function Page() {
         src="https://npm.chart.dev/embed/tinyglobby?primary=violet&gray=cool&theme=dark"
         title="npm download chart"
       />
-      <sup>
+      <small>
         Have a big project that uses tinyglobby?{' '}
         <Link
           target="_blank"
@@ -60,7 +63,7 @@ export default function Page() {
         >
           Add it to the list
         </Link>
-      </sup>
+      </small>
     </main>
   );
 }
