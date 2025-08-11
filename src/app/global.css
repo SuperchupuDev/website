@@ -5,15 +5,28 @@ header {
   justify-content: flex-end;
   flex-wrap: wrap;
   row-gap: 4px;
-  width: 100%;
+  /*
+    some pages have a hamburger menu at the top left on tiny screen widths
+    we dont want the nav bar to overlap with it
+  */
+  padding-left: 30px;
+  width: calc(100% - 30px);
 
   @media (min-width: 960px) {
     position: fixed;
     /* twoslash popups are z-index 9 */
     z-index: 10;
+    padding: 0;
     height: 40px;
+    width: 100%;
     top: 0;
     left: 0;
+  }
+
+  & > nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
   :not(nav) {
