@@ -79,7 +79,7 @@ export default function Page() {
         </Code>
       </APIEntry>
       <hr />
-      <APIEntry marginBottom={'6.5em'} name="isDynamicPattern">
+      <APIEntry marginBottom={'7.2em'} name="isDynamicPattern">
         <p>Checks if a pattern has dynamic parts.</p>
         <p>
           Has a few minor differences with{' '}
@@ -257,7 +257,7 @@ interface APIOptionProps {
 
 function APIOption(props: APIOptionProps) {
   return (
-    <section className="entry option">
+    <section className="entry">
       <h3 id={props.name}>
         <Code meta="twoslash no-jsdoc" lang="ts">
           {dedent`
