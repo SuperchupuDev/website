@@ -48,18 +48,10 @@ export default function Page() {
         </div>
       </h3>
       <iframe
+        id="chart"
         src="https://npm.chart.dev/embed/tinyglobby?primary=violet&gray=cool&theme=dark"
-        style={{
-          border: 'hidden',
-          borderRadius: '8px',
-          overflow: 'hidden',
-          height: '630px',
-          width: '760px',
-          maxWidth: '100%'
-        }}
         title="npm download chart"
       />
-      <br />
       <sup>
         Have a big project that uses tinyglobby?{' '}
         <Link

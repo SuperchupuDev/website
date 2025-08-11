@@ -20,9 +20,7 @@ export default function Page() {
       </h1>
       <h2 id="api">API</h2>
       <APIEntry name="glob">
-        Asynchronously match files following a glob pattern.
-        <br />
-        <br />
+        <p>Asynchronously match files following a glob pattern.</p>
         <strong>Usage:</strong>
         <Code lang="ts">
           {dedent`
@@ -36,9 +34,7 @@ export default function Page() {
       </APIEntry>
       <hr />
       <APIEntry name="globSync">
-        Synchronously match files following a glob pattern.
-        <br />
-        <br />
+        <p>Synchronously match files following a glob pattern.</p>
         <strong>Usage:</strong>
         <Code lang="ts">
           {dedent`
@@ -52,13 +48,13 @@ export default function Page() {
       </APIEntry>
       <hr />
       <APIEntry name="convertPathToPattern">
-        Converts a path to a pattern depending on the platform. Identical to{' '}
-        <Link href="#escapePath">
-          <code>escapePath</code>
-        </Link>{' '}
-        on POSIX systems.
-        <br />
-        <br />
+        <p>
+          Converts a path to a pattern depending on the platform. Identical to{' '}
+          <Link href="#escapePath">
+            <code>escapePath</code>
+          </Link>{' '}
+          on POSIX systems.
+        </p>
         <strong>Usage:</strong>
         <Code lang="ts">
           {dedent`
@@ -71,9 +67,7 @@ export default function Page() {
       </APIEntry>
       <hr />
       <APIEntry name="escapePath">
-        Escapes a path's special characters depending on the platform.
-        <br />
-        <br />
+        <p>Escapes a path's special characters depending on the platform.</p>
         <strong>Usage:</strong>
         <Code lang="ts">
           {dedent`
@@ -85,21 +79,15 @@ export default function Page() {
         </Code>
       </APIEntry>
       <hr />
-      <APIEntry name="isDynamicPattern">
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        Checks if a pattern has dynamic parts.
-        <br />
-        <br />
-        Has a few minor differences with{' '}
-        <Link target="_blank" href="https://github.com/mrmlnc/fast-glob">
-          <code>fast-glob</code>
-        </Link>{' '}
-        for better accuracy:
-        <br />
+      <APIEntry marginBottom={'6.5em'} name="isDynamicPattern">
+        <p>Checks if a pattern has dynamic parts.</p>
+        <p>
+          Has a few minor differences with{' '}
+          <Link target="_blank" href="https://github.com/mrmlnc/fast-glob">
+            <code>fast-glob</code>
+          </Link>{' '}
+          for better accuracy:
+        </p>
         <ul>
           <li>
             Doesn't necessarily return <code>false</code> on patterns that include <code>\</code>.
@@ -129,23 +117,25 @@ export default function Page() {
       <h2 id="options">Options</h2>
       <Code lang="ts">{"import type { GlobOptions } from 'tinyglobby';"}</Code>
       <APIOption name="absolute" default="false">
-        Whether to return absolute paths. Disable to have relative paths.
+        <p>Whether to return absolute paths. Disable to have relative paths.</p>
       </APIOption>
       <hr />
       <APIOption name="caseSensitiveMatch" default="true">
-        Whether to match in case-sensitive mode.
+        <p>Whether to match in case-sensitive mode.</p>
       </APIOption>
       <hr />
       <APIOption name="cwd" default="process.cwd()">
-        The working directory in which to search. Results will be returned relative to this directory, unless{' '}
-        <Link href="#absolute">
-          <code>absolute</code>
-        </Link>{' '}
-        is set.
-        <br />
-        <br />
-        It is important to avoid globbing outside this directory when possible, even with absolute paths enabled, as
-        doing so can harm performance due to having to recalculate relative paths.
+        <p>
+          The working directory in which to search. Results will be returned relative to this directory, unless{' '}
+          <Link href="#absolute">
+            <code>absolute</code>
+          </Link>{' '}
+          is set.
+        </p>
+        <p>
+          It is important to avoid globbing outside this directory when possible, even with absolute paths enabled, as
+          doing so can harm performance due to having to recalculate relative paths.
+        </p>
         <Code lang="ts">
           {dedent`
             import { glob } from 'tinyglobby';
@@ -166,51 +156,61 @@ export default function Page() {
       </APIOption>
       <hr />
       <APIOption name="debug" default="false">
-        Logs useful debug information. Meant for development purposes. Logs can change at any time.
+        <p>Logs useful debug information. Meant for development purposes. Logs can change at any time.</p>
       </APIOption>
       <hr />
       <APIOption name="deep" default="Infinity">
-        Maximum directory depth to crawl.
+        <p>Maximum directory depth to crawl.</p>
       </APIOption>
       <hr />
       <APIOption name="dot" default="false">
-        Whether to return entries that start with a dot, like <code>.gitignore</code> or <code>.prettierrc</code>.
+        <p>
+          Whether to return entries that start with a dot, like <code>.gitignore</code> or <code>.prettierrc</code>.
+        </p>
       </APIOption>
       <hr />
       <APIOption name="expandDirectories" default="true">
-        Whether to automatically expand directory patterns. Important to disable if migrating from{' '}
-        <Link target="_blank" href="https://github.com/mrmlnc/fast-glob">
-          <code>fast-glob</code>.
-        </Link>
+        <p>
+          Whether to automatically expand directory patterns. Important to disable if migrating from{' '}
+          <Link target="_blank" href="https://github.com/mrmlnc/fast-glob">
+            <code>fast-glob</code>.
+          </Link>
+        </p>
       </APIOption>
       <hr />
       <APIOption name="followSymbolicLinks" default="true">
-        Whether to traverse and include symbolic links. Can slightly affect performance.
+        <p>Whether to traverse and include symbolic links. Can slightly affect performance.</p>
       </APIOption>
       <hr />
       <APIOption name="globstar" default="true">
-        Enables support for matching nested directories with globstars (<code>**</code>). If `false`, <code>**</code>{' '}
-        behaves exactly like `*`.
+        <p>
+          Enables support for matching nested directories with globstars (<code>**</code>). If `false`, <code>**</code>{' '}
+          behaves exactly like <code>*</code>`.
+        </p>
       </APIOption>
       <hr />
       <APIOption name="ignore" default="[]">
-        Glob patterns to exclude from the results.
+        <p>Glob patterns to exclude from the results.</p>
       </APIOption>
       <hr />
       <APIOption name="onlyDirectories" default="false">
-        Enable to only return directories. If <code>true</code>, disables{' '}
-        <Link href="#onlyFiles">
-          <code>onlyFiles</code>
-        </Link>
-        .
+        <p>
+          Enable to only return directories. If <code>true</code>, disables{' '}
+          <Link href="#onlyFiles">
+            <code>onlyFiles</code>
+          </Link>
+          .
+        </p>
       </APIOption>
       <hr />
       <APIOption name="onlyFiles" default="true">
-        Enable to only return files.
+        <p>Enable to only return files.</p>
       </APIOption>
       <hr />
       <APIOption name="signal" default="undefined">
-        An <code>AbortSignal</code> to abort crawling the file system.
+        <p>
+          An <code>AbortSignal</code> to abort crawling the file system.
+        </p>
         <Code lang="ts">
           {dedent`
             import { glob } from 'tinyglobby';
@@ -228,12 +228,13 @@ export default function Page() {
 
 interface APIEntryProps {
   name: keyof typeof import('tinyglobby');
+  marginBottom?: string | number;
   children?: ReactNode;
 }
 function APIEntry(props: APIEntryProps) {
   return (
-    <div className="entry">
-      <h3 id={props.name}>
+    <section className="entry">
+      <h3 id={props.name} style={props.marginBottom ? { marginBottom: props.marginBottom } : undefined}>
         <Code meta="twoslash no-jsdoc" lang="ts">
           {dedent`
             import { ${props.name} } from 'tinyglobby';
@@ -243,9 +244,8 @@ function APIEntry(props: APIEntryProps) {
           `}
         </Code>
       </h3>
-      <br />
       {props.children}
-    </div>
+    </section>
   );
 }
 
@@ -257,7 +257,7 @@ interface APIOptionProps {
 
 function APIOption(props: APIOptionProps) {
   return (
-    <div className="option">
+    <section className="entry option">
       <h3 id={props.name}>
         <Code meta="twoslash no-jsdoc" lang="ts">
           {dedent`
@@ -269,11 +269,8 @@ function APIOption(props: APIOptionProps) {
           `}
         </Code>
       </h3>
-      <br />
       {props.children}
-      <br />
       <strong>Default:</strong> <code>{props.default}</code>
-      <br />
-    </div>
+    </section>
   );
 }
