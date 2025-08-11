@@ -40,7 +40,10 @@ header {
   padding: 15px;
 }
 
-pre:not(.twoslash),
+pre:not(.twoslash) {
+  overflow-x: auto;
+}
+
 .twoslash .twoslash-popup-code {
   /*
     codeblock padding - 15px
