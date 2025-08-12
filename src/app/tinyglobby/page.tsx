@@ -50,11 +50,13 @@ export default function Page() {
           ))}
         </div>
       </h3>
-      <iframe
-        id="chart"
-        src="https://npm.chart.dev/embed/tinyglobby?primary=violet&gray=cool&theme=dark"
-        title="npm download chart"
-      />
+      <div id="chart-container">
+        <iframe
+          id="chart"
+          src="https://npm.chart.dev/embed/tinyglobby?primary=violet&gray=cool&theme=dark"
+          title="npm download chart"
+        />
+      </div>
       <small>
         Have a big project that uses tinyglobby?{' '}
         <Link

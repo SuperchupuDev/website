@@ -131,14 +131,32 @@ hr {
   }
 }
 
-#chart {
+#chart-container {
   display: block;
-  border: hidden;
-  border-radius: 8px;
   overflow: hidden;
-  height: 630px;
+  border-radius: 8px;
+  height: 540px;
   width: 760px;
   max-width: 100%;
+  @media (max-width: 655px) {
+    height: 530px;
+  }
+}
+
+#chart {
+  border: hidden;
+  overflow: hidden;
+  object-position: 0 -90px;
+  height: calc(100% + 90px);
+  width: 100%;
+  @media (max-width: 655px) {
+    object-position: 0 -134px;
+    height: calc(100% + 134px);
+  }
+  @media (max-width: 494px) {
+    object-position: 0 -158px;
+    height: calc(100% + 158px);
+  }
 }
 
 #edit-page {
