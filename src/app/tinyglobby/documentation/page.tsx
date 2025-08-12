@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { convertPathToPattern, type GlobOptions } from 'tinyglobby';
-import { version } from 'tinyglobby/package.json' with { type: 'json' };
+import pkg from 'tinyglobby/package.json' with { type: 'json' };
 import { Code } from '#components/Code.tsx';
 
 import '../styles.css';
@@ -16,7 +16,7 @@ export default function Page() {
   return (
     <main>
       <h1>
-        tinyglobby documentation <small className="sub">v{version}</small>
+        tinyglobby documentation <small className="sub">v{pkg.version}</small>
       </h1>
       <h2 id="api">API</h2>
       <APIEntry name="glob">
