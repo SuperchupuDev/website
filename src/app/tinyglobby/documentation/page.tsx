@@ -184,8 +184,8 @@ export default function Page() {
       <hr />
       <APIOption name="globstar" default="true">
         <p>
-          Enables support for matching nested directories with globstars (<code>**</code>). If `false`, <code>**</code>{' '}
-          behaves exactly like <code>*</code>`.
+          Enables support for matching nested directories with globstars (<code>**</code>). If <code>false</code>,{' '}
+          <code>**</code> behaves exactly like <code>*</code>.
         </p>
       </APIOption>
       <hr />
