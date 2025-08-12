@@ -1,3 +1,4 @@
+import { ThreeBarsIcon } from '@primer/octicons-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
@@ -13,7 +14,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <button id="sidebar-button" type="button" popoverTarget="sidebar" popoverTargetAction="show">
-        ☰
+        <ThreeBarsIcon />
       </button>
       <aside id="sidebar" popover="auto">
         <ul>

@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@primer/octicons-react':
+        specifier: ^19.15.5
+        version: 19.15.5(react@19.1.0)
       '@shikijs/twoslash':
         specifier: ^3.7.0
         version: 3.7.0(typescript@5.8.3)
@@ -290,6 +293,12 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
+
+  '@primer/octicons-react@19.15.5':
+    resolution: {integrity: sha512-JEoxBVkd6F8MaKEO1QKau0Nnk3IVroYn7uXGgMqZawcLQmLljfzua3S1fs2FQs295SYM9I6DlkESgz5ORq5yHA==}
+    engines: {node: '>=8'}
+    peerDependencies:
+      react: '>=16.3'
 
   '@shikijs/core@3.7.0':
     resolution: {integrity: sha512-yilc0S9HvTPyahHpcum8eonYrQtmGTU0lbtwxhA6jHv4Bm1cAdlPFRCJX4AHebkCm75aKTjjRAW+DezqD1b/cg==}
@@ -1086,6 +1095,10 @@ snapshots:
 
   '@next/swc-win32-x64-msvc@15.3.4':
     optional: true
+
+  '@primer/octicons-react@19.15.5(react@19.1.0)':
+    dependencies:
+      react: 19.1.0
 
   '@shikijs/core@3.7.0':
     dependencies:
