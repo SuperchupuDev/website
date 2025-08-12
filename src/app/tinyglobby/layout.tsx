@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { EditPageLink } from '#components/EditPageLink.tsx';
 import { SidebarEntry } from '#components/SidebarEntry.tsx';
 
 export const metadata: Metadata = {
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </ul>
       </aside>
       {children}
+      <EditPageLink />
     </>
   );
 }
