@@ -55,6 +55,7 @@ export default function Page() {
           id="chart"
           src="https://npm.chart.dev/embed/tinyglobby?primary=violet&gray=cool&theme=dark"
           title="npm download chart"
+          width={760}
         />
       </div>
       <small>

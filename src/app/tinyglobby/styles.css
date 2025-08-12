@@ -132,7 +132,7 @@ hr {
 }
 
 #chart-container {
-  display: block;
+  position: relative;
   overflow: hidden;
   border-radius: 8px;
   height: 540px;
@@ -144,17 +144,18 @@ hr {
 }
 
 #chart {
+  position: absolute;
   border: hidden;
   overflow: hidden;
-  object-position: 0 -90px;
+  top: -90px;
   height: calc(100% + 90px);
   width: 100%;
   @media (max-width: 655px) {
-    object-position: 0 -134px;
+    top: -134px;
     height: calc(100% + 134px);
   }
   @media (max-width: 494px) {
-    object-position: 0 -158px;
+    top: -158px;
     height: calc(100% + 158px);
   }
 }
