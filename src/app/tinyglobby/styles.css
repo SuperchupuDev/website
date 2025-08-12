@@ -45,6 +45,11 @@ hr {
   z-index: 100;
 }
 
+[data-theme="dark"] #sidebar-button {
+  color: white;
+  background-color: #2b2a33;
+}
+
 @media (max-width: 1300px) {
   #sidebar {
     display: none;
