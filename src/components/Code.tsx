@@ -1,6 +1,9 @@
 import { getHighlighter, getTransformers } from '#lib/api.ts';
 
-import '@shikijs/twoslash/style-rich.css';
+// i dont like importing from node_modules either
+// but not doing so produces a nextjs warning
+// o.o
+import '../../node_modules/@shikijs/twoslash/style-rich.css';
 
 interface CodeProps {
   children: string;
