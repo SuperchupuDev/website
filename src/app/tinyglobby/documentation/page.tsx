@@ -88,18 +88,18 @@ export default function Page() {
         </p>
         <ul>
           <li>
-            Doesn't necessarily return <code>false</code> on patterns that include <code>\</code>.
+            Doesn't necessarily return <code>false</code> on patterns that include '<code>\\</code>'.
           </li>
           <li>
             Returns <code>true</code> if the pattern includes parentheses, regardless of them representing one single
             pattern or not.
           </li>
           <li>
-            Returns <code>true</code> for unfinished glob extensions i.e. <code>(h</code>, <code>+(h</code>.
+            Returns <code>true</code> for unfinished glob extensions i.e. '<code>(h</code>', '<code>+(h</code>'.
           </li>
           <li>
-            Returns <code>true</code> for unfinished brace expansions as long as they include <code>,</code> or{' '}
-            <code>..</code>.
+            Returns <code>true</code> for unfinished brace expansions as long as they include '<code>,</code>' or '
+            <code>..</code>'.
           </li>
         </ul>
         <strong>Usage:</strong>
@@ -116,6 +116,12 @@ export default function Page() {
       <Code lang="ts">{"import type { GlobOptions } from 'tinyglobby';"}</Code>
       <APIOption name="absolute" default="false">
         <p>Whether to return absolute paths. Disable to have relative paths.</p>
+      </APIOption>
+      <hr />
+      <APIOption name="braceExpansion" default="true">
+        <p>
+          Enables support for brace expansion syntax, like '<code>{'{a,b}'}</code>' or '<code>{'{1..9}'}</code>'.
+        </p>
       </APIOption>
       <hr />
       <APIOption name="caseSensitiveMatch" default="true">
@@ -176,14 +182,20 @@ export default function Page() {
         </p>
       </APIOption>
       <hr />
+      <APIOption name="extglob" default="true">
+        <p>
+          Enables support for extglobs, like '<code>+(pattern)</code>'.
+        </p>
+      </APIOption>
+      <hr />
       <APIOption name="followSymbolicLinks" default="true">
         <p>Whether to traverse and include symbolic links. Can slightly affect performance.</p>
       </APIOption>
       <hr />
       <APIOption name="globstar" default="true">
         <p>
-          Enables support for matching nested directories with globstars (<code>**</code>). If <code>false</code>,{' '}
-          <code>**</code> behaves exactly like <code>*</code>.
+          Enables support for matching nested directories with globstars ('<code>**</code>'). If <code>false</code>, '
+          <code>**</code>' behaves exactly like '<code>*</code>'.
         </p>
       </APIOption>
       <hr />

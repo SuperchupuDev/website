@@ -48,12 +48,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </li>
             <ul>
               <SidebarEntry name="absolute" />
+              <SidebarEntry name="braceExpansion" />
               <SidebarEntry name="caseSensitiveMatch" />
               <SidebarEntry name="cwd" />
               <SidebarEntry name="debug" />
               <SidebarEntry name="deep" />
               <SidebarEntry name="dot" />
               <SidebarEntry name="expandDirectories" />
+              <SidebarEntry name="extglob" />
               <SidebarEntry name="followSymbolicLinks" />
               <SidebarEntry name="globstar" />
               <SidebarEntry name="ignore" />
