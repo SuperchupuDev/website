@@ -46,7 +46,7 @@ const components = {
   },
   code: ({ className, ...props }) => {
     const lang = /^language-(\w+)$/.exec(className)?.[1];
-    return <Code lang={lang} {...props} />;
+    return lang ? <Code lang={lang} {...props} /> : <code {...props} />;
   }
 } satisfies MDXComponents;
 
