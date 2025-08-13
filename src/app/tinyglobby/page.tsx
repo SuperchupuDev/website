@@ -4,8 +4,6 @@ import type { CSSProperties } from 'react';
 import { Code } from '#components/Code.tsx';
 import projects from './projects.json' with { type: 'json' };
 
-import './styles.css';
-
 export default function Page() {
   return (
     <main>
@@ -32,9 +30,105 @@ export default function Page() {
           globSync('src/**/*.ts', { ignore: '**/*.d.ts' });
         `}
       </Code>
-      <h3>
-        <Link href="/tinyglobby/documentation">Documentation</Link>
-      </h3>
+      <p>
+        This package was created as a minimal glob library that's as tiny and fast as possible, as most glob libraries
+        nowadays{' '}
+        <Link href="https://pkg-size.dev/glob" target="_blank">
+          are bloated
+        </Link>{' '}
+        and{' '}
+        <Link href="https://npmgraph.js.org/?q=globby#select=exact%3Ais-number%407.0.0" target="_blank">
+          indirectly depend on
+        </Link>{' '}
+        code that isn't too optimal.
+      </p>
+      <p>
+        It aims to be as close to a drop-in replacement to{' '}
+        <Link href="https://github.com/sindresorhus/globby" target="_blank">
+          <code>globby</code>
+        </Link>{' '}
+        and{' '}
+        <Link href="https://github.com/mrmlnc/fast-glob" target="_blank">
+          <code>fast-glob</code>
+        </Link>{' '}
+        as possible, since they both have{' '}
+        <Link href="https://github.com/sindresorhus/globby#expanddirectories" target="_blank">
+          certain
+        </Link>{' '}
+        <Link href="https://github.com/mrmlnc/fast-glob#how-to-exclude-directory-from-reading" target="_blank">
+          behaviors
+        </Link>{' '}
+        not present in any other glob libraries, which aren't straightforward to recreate manually. You can read the{' '}
+        <Link href="/tinyglobby/migration">migration guide</Link> for an in-depth explanation on how to switch.
+      </p>
+      <h3>Documentation</h3>
+      <p>
+        See the <Link href="/tinyglobby/documentation">documentation page</Link> for an overview of the library's API.
+      </p>
+      <h3>Speed and Size</h3>
+      <p>
+        <code>tinyglobby</code> is{' '}
+        <Link
+          href="https://github.com/SuperchupuDev/tinyglobby/actions/workflows/benchmark.yml?query=event%3Apush%20branch%3Amain"
+          target="_blank"
+        >
+          faster than other glob libraries
+        </Link>{' '}
+        in the vast majority of use cases. The difference gets bigger the more files you match.
+      </p>
+      <p>
+        The reason it's so fast is not only because it was coded with performance in mind, but also because it relies on
+        two extremely fast libraries,{' '}
+        <Link href="https://github.com/thecodrr/fdir" target="_blank">
+          <code>fdir</code>
+        </Link>
+        , the{' '}
+        <Link href="https://github.com/thecodrr/fdir/blob/master/BENCHMARKS.md" target="_blank">
+          fastest
+        </Link>{' '}
+        file system crawler and{' '}
+        <Link href="https://github.com/micromatch/picomatch" target="_blank">
+          <code>picomatch</code>
+        </Link>
+        , (almost) the fastest matcher. Both use{' '}
+        <Link href="https://npmgraph.js.org/?q=fdir" target="_blank">
+          zero
+        </Link>{' '}
+        <Link href="https://npmgraph.js.org/?q=picomatch" target="_blank">
+          dependencies
+        </Link>
+        .
+      </p>
+      <p>
+        In terms of size, <code>tinyglobby</code> currently has{' '}
+        <Link href="https://pkg-size.dev/tinyglobby" target="_blank">
+          202KB
+        </Link>{' '}
+        of package size, compared to <code>globby</code>'s{' '}
+        <Link href="https://pkg-size.dev/globby" target="_blank">
+          631KB
+        </Link>{' '}
+        and <code>fast-glob</code>'s{' '}
+        <Link href="https://pkg-size.dev/fast-glob" target="_blank">
+          513KB
+        </Link>
+        .
+      </p>
+      <p>
+        It only has{' '}
+        <Link href="https://npmgraph.js.org/?q=tinyglobby" target="_blank">
+          two
+        </Link>{' '}
+        subdependencies while <code>globby</code> has{' '}
+        <Link href="https://npmgraph.js.org/?q=globby" target="_blank">
+          23
+        </Link>{' '}
+        and <code>fast-glob</code> has{' '}
+        <Link href="https://npmgraph.js.org/?q=fast-glob" target="_blank">
+          17
+        </Link>
+        . This makes install times noticeably faster and means less code users have to install and depend on.
+      </p>
       <h3 id="used-by">
         Used by{' '}
         <div id="used-by-entries" style={{ '--marquee-count': projects.length } as CSSProperties}>
@@ -50,6 +144,10 @@ export default function Page() {
           ))}
         </div>
       </h3>
+      <p>
+        <code>tinyglobby</code> is used by many projects of the JavaScript ecosystem, leading to over 25 million weekly
+        downloads.
+      </p>
       <div id="chart-container">
         <iframe
           id="chart"

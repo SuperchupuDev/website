@@ -6,8 +6,6 @@ import { convertPathToPattern, type GlobOptions } from 'tinyglobby';
 import pkg from 'tinyglobby/package.json' with { type: 'json' };
 import { Code } from '#components/Code.tsx';
 
-import '../styles.css';
-
 export const metadata: Metadata = {
   title: 'documentation'
 };
