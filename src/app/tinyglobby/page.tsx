@@ -127,7 +127,7 @@ export default function Page() {
         <Link href="https://npmgraph.js.org/?q=fast-glob" target="_blank">
           17
         </Link>
-        . This makes install times noticeably faster and means less code users have to install and depend on.
+        . This makes install times noticeably faster and means less code and libraries to install and depend on.
       </p>
       <h3 id="used-by">
         Used by{' '}
