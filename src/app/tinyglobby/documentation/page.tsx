@@ -88,18 +88,18 @@ export default function Page() {
         </p>
         <ul>
           <li>
-            Doesn't necessarily return <code>false</code> on patterns that include '<code>\\</code>'.
+            Doesn't necessarily return <code>false</code> on patterns that include "<code>\\</code>".
           </li>
           <li>
             Returns <code>true</code> if the pattern includes parentheses, regardless of them representing one single
             pattern or not.
           </li>
           <li>
-            Returns <code>true</code> for unfinished glob extensions i.e. '<code>(h</code>', '<code>+(h</code>'.
+            Returns <code>true</code> for unfinished glob extensions i.e. "<code>(h</code>", "<code>+(h</code>".
           </li>
           <li>
-            Returns <code>true</code> for unfinished brace expansions as long as they include '<code>,</code>' or '
-            <code>..</code>'.
+            Returns <code>true</code> for unfinished brace expansions as long as they include "<code>,</code>" or "
+            <code>..</code>".
           </li>
         </ul>
         <strong>Usage:</strong>
@@ -120,7 +120,7 @@ export default function Page() {
       <hr />
       <APIOption name="braceExpansion" default="true">
         <p>
-          Enables support for brace expansion syntax, like '<code>{'{a,b}'}</code>' or '<code>{'{1..9}'}</code>'.
+          Enables support for brace expansion syntax, like "<code>{'{a,b}'}</code>" or "<code>{'{1..9}'}</code>".
         </p>
       </APIOption>
       <hr />
@@ -184,7 +184,7 @@ export default function Page() {
       <hr />
       <APIOption name="extglob" default="true">
         <p>
-          Enables support for extglobs, like '<code>+(pattern)</code>'.
+          Enables support for extglobs, like "<code>+(pattern)</code>".
         </p>
       </APIOption>
       <hr />
@@ -192,10 +192,32 @@ export default function Page() {
         <p>Whether to traverse and include symbolic links. Can slightly affect performance.</p>
       </APIOption>
       <hr />
+      <APIOption name="fs" default="import('node:fs')">
+        <p>
+          An object that overrides{' '}
+          <Link href="https://nodejs.org/api/fs.html" target="_blank">
+            <code>node:fs</code>
+          </Link>{' '}
+          functions.
+        </p>
+        <Code lang="ts">
+          {dedent`
+            type FileSystemAdapter = {
+              readdir?: typeof fs.readdir;
+              readdirSync?: typeof fs.readdirSync;
+              realpath?: typeof fs.realpath;
+              realpathSync?: typeof fs.realpathSync;
+              stat?: typeof fs.stat;
+              statSync?: typeof fs.statSync;
+            };
+          `}
+        </Code>
+      </APIOption>
+      <hr />
       <APIOption name="globstar" default="true">
         <p>
-          Enables support for matching nested directories with globstars ('<code>**</code>'). If <code>false</code>, '
-          <code>**</code>' behaves exactly like '<code>*</code>'.
+          Enables support for matching nested directories with globstars ("<code>**</code>"). If <code>false</code>, "
+          <code>**</code>" behaves exactly like "<code>*</code>".
         </p>
       </APIOption>
       <hr />
@@ -275,7 +297,7 @@ function APIOption(props: APIOptionProps) {
             declare const ${props.name}: GlobOptions['${props.name}'];
             // ---cut---
             ${props.name}
-            // ^?
+            //^?
           `}
         </Code>
       </h3>

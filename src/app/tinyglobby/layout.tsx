@@ -57,6 +57,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <SidebarEntry name="expandDirectories" />
               <SidebarEntry name="extglob" />
               <SidebarEntry name="followSymbolicLinks" />
+              <SidebarEntry name="fs" />
               <SidebarEntry name="globstar" />
               <SidebarEntry name="ignore" />
               <SidebarEntry name="onlyDirectories" />

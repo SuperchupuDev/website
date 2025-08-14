@@ -36,8 +36,8 @@ importers:
         specifier: ^3.7.0
         version: 3.7.0
       tinyglobby:
-        specifier: https://pkg.pr.new/tinyglobby@74c3d52
-        version: https://pkg.pr.new/tinyglobby@74c3d52
+        specifier: https://pkg.pr.new/tinyglobby@225cca2
+        version: https://pkg.pr.new/tinyglobby@225cca2
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.0.5
@@ -499,8 +499,9 @@ packages:
   extend@3.0.2:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
 
-  fdir@6.4.6:
-    resolution: {integrity: sha512-hiFoqpyZcfNm1yc4u8oWCf9A2c4D3QjCrks3zmoVKVxpQRzmPNar1hUJcBG2RQHvEVGDN+Jm81ZheVLAQMK6+w==}
+  fdir@6.5.0:
+    resolution: {integrity: sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==}
+    engines: {node: '>=12.0.0'}
     peerDependencies:
       picomatch: ^3 || ^4
     peerDependenciesMeta:
@@ -826,8 +827,8 @@ packages:
       babel-plugin-macros:
         optional: true
 
-  tinyglobby@https://pkg.pr.new/tinyglobby@74c3d52:
-    resolution: {tarball: https://pkg.pr.new/tinyglobby@74c3d52}
+  tinyglobby@https://pkg.pr.new/tinyglobby@225cca2:
+    resolution: {tarball: https://pkg.pr.new/tinyglobby@225cca2}
     version: 0.2.14
     engines: {node: '>=12.0.0'}
 
@@ -1313,7 +1314,7 @@ snapshots:
 
   extend@3.0.2: {}
 
-  fdir@6.4.6(picomatch@4.0.3):
+  fdir@6.5.0(picomatch@4.0.3):
     optionalDependencies:
       picomatch: 4.0.3
 
@@ -1940,9 +1941,9 @@ snapshots:
       client-only: 0.0.1
       react: 19.1.0
 
-  tinyglobby@https://pkg.pr.new/tinyglobby@74c3d52:
+  tinyglobby@https://pkg.pr.new/tinyglobby@225cca2:
     dependencies:
-      fdir: 6.4.6(picomatch@4.0.3)
+      fdir: 6.5.0(picomatch@4.0.3)
       picomatch: 4.0.3
 
   trim-lines@3.0.1: {}
