@@ -48,6 +48,16 @@ header {
   padding: 15px;
 }
 
+:not(.shiki) > code:not(.twoslash-popup-code) {
+  padding: 0 4px;
+  font-size: 1rem;
+  border-radius: 0.2rem;
+  background-color: #e8e8e8;
+  :root[data-theme="dark"] & {
+    background-color: #0d1117;
+  }
+}
+
 pre:not(.twoslash) {
   overflow-x: auto;
 }

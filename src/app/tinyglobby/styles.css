@@ -21,6 +21,9 @@ hr {
   }
   ul {
     padding-left: 18px;
+    code {
+      font-size: 0.8rem;
+    }
   }
 }
 
@@ -49,7 +52,7 @@ hr {
   background-color: #2b2a33;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1350px) {
   #sidebar {
     display: none;
     top: 0;
@@ -58,7 +61,6 @@ hr {
     border: none;
     padding: 1rem;
     margin: 0;
-    width: 200px;
     &:popover-open {
       display: block;
     }
