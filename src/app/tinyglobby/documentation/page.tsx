@@ -241,7 +241,11 @@ export default function Page() {
       <hr />
       <APIOption name="signal" default="undefined">
         <p>
-          An <code>AbortSignal</code> to abort crawling the file system.
+          An{' '}
+          <Link href="https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal" target="_blank">
+            <code>AbortSignal</code>
+          </Link>{' '}
+          to abort crawling the file system.
         </p>
         <Code lang="ts">
           {dedent`

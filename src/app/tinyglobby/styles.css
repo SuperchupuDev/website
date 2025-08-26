@@ -86,6 +86,10 @@ hr {
   font-size: 15px;
 }
 
+.inline-code-heading {
+  font-size: x-large !important;
+}
+
 #used-by {
   display: flex;
   align-items: center;
