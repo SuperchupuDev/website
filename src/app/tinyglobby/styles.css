@@ -50,6 +50,9 @@ hr {
 [data-theme="dark"] #sidebar-button {
   color: white;
   background-color: #2b2a33;
+  &:hover {
+    background-color: #52525e;
+  }
 }
 
 @media (max-width: 1350px) {
