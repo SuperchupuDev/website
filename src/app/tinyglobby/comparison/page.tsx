@@ -33,6 +33,7 @@ export default function Page() {
         </Link>
         .
       </p>
+      <h3>Brace expansions</h3>
       <p>
         Despite{' '}
         <Link href="https://github.com/micromatch/picomatch#braces" target="_blank">
@@ -54,6 +55,38 @@ export default function Page() {
         all. <code>tinyglobby</code> has never come across a user report of something breaking after switching due to
         the lack of these brace features.
       </p>
+      <h3>Trailing slashes</h3>
+      <p>
+        In{' '}
+        <Link href="https://github.com/outslept/glob-comparison#16-trailing-slash-semantics" target="_blank">
+          other glob libraries
+        </Link>
+        , patterns with trailing slashes (like <code>src/</code>) generally only match directories.
+      </p>
+      <p>
+        <code>tinyglobby</code>{' '}
+        <Link href="https://github.com/SuperchupuDev/tinyglobby/issues/45" target="_blank">
+          ignores
+        </Link>{' '}
+        the trailing slash, making patterns like that also match files.
+      </p>
+      <p>
+        The reason for this is that <code>fast-glob</code>{' '}
+        <Link href="https://github.com/mrmlnc/fast-glob/issues/458" target="_blank">
+          ignores
+        </Link>{' '}
+        trailing slashes on static patterns, and changing it in <code>tinyglobby</code> could break the code of some
+        users that migrate from <code>fast-glob</code> and use static patterns like <code>src/index.ts/</code>.
+      </p>
+      <p>Proper handling of trailing slashes might be added in a future major release.</p>
+      <hr style={{ margin: '1em 0' }} />
+      <em>
+        See{' '}
+        <Link href="https://github.com/outslept/glob-comparison#readme" target="_blank">
+          outslept/glob-comparison
+        </Link>{' '}
+        for an in-depth comparison of syntax features across glob libraries.
+      </em>
       <h2>Options</h2>
       <h3>
         <code className="inline-code-heading">expandDirectories</code>
