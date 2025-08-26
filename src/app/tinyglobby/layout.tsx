@@ -15,7 +15,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <button id="sidebar-button" type="button" popoverTarget="sidebar" popoverTargetAction="show">
+      <button
+        id="sidebar-button"
+        aria-label="Open navigation menu"
+        type="button"
+        popoverTarget="sidebar"
+        popoverTargetAction="show"
+      >
         <ThreeBarsIcon />
       </button>
       <aside id="sidebar" popover="auto">

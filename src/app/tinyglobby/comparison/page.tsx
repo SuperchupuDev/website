@@ -36,7 +36,7 @@ export default function Page() {
         <Link href="https://github.com/micromatch/picomatch#braces" target="_blank">
           mentioning the opposite
         </Link>{' '}
-        in its README, <code>picomatch</code> does support brace expansions, although the support is pretty minimal
+        in its README, <code>picomatch</code> does support brace expansions, although the support is pretty minimal.
       </p>
       <p>This leads to the following differences in brace patterns:</p>
       <ul>
