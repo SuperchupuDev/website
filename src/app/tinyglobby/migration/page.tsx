@@ -57,8 +57,7 @@ export default function Page() {
                 { cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }
               )
               .split('\n')
-              .filter(Boolean)
-              .map(file => file.replace(/\/$/, ''));
+              .filter(Boolean);
 
               return glob(patterns, {
                 ...restOptions,
