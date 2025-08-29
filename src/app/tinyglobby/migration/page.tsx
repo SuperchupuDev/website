@@ -44,7 +44,7 @@ export default function Page() {
         advantage of <code>git</code>'s <code>ls-files</code> command:
       </p>
       <Code lang="ts">
-        {dedent`
+        {dedent.withOptions({ escapeSpecialCharacters: false })`
           import { execSync } from 'node:child_process';
           import { glob } from 'tinyglobby';
 
@@ -56,7 +56,7 @@ export default function Page() {
                 'git ls-files --others --ignored --exclude-standard --directory',
                 { cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }
               )
-              .split('\\ n'))
+              .split('\n')
               .filter(Boolean)
               .map(file => file.replace(/\/$/, ''));
 
