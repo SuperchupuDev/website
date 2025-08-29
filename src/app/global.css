@@ -48,9 +48,13 @@ header {
   padding: 15px;
 }
 
+code {
+  /* 15/16, alternative to doing 15px */
+  font-size: 0.9375rem;
+}
+
 :not(.shiki) > code:not(.twoslash-popup-code) {
   padding: 0 4px;
-  font-size: 1rem;
   border-radius: 0.2rem;
   background-color: #e8e8e8;
   :root[data-theme="dark"] & {
