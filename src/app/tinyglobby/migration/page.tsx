@@ -15,8 +15,16 @@ export default function Page() {
         , as doing that makes <code>tinyglobby</code> use a path calculation algorithm that's considerably slower. This
         also applies when enabling the{' '}
         <Link href="/tinyglobby/documentation#absolute">
-          <code>cwd</code>
-        </Link>
+          <code>absolute</code>
+        </Link>{' '}
+        option.
+      </p>
+      <p>
+        See{' '}
+        <Link href="/tinyglobby/documentation#cwd">
+          <code>cwd</code>'s documentation
+        </Link>{' '}
+        for more details.
       </p>
       <h2 id="globby">Switching from globby</h2>
       <p>
@@ -41,7 +49,11 @@ export default function Page() {
       </p>
       <p>
         To make <code>tinyglobby</code> exclude gitignored files, you can use the following workaround by taking
-        advantage of <code>git</code>'s <code>ls-files</code> command:
+        advantage of <code>git</code>'s{' '}
+        <Link href="https://git-scm.com/docs/git-ls-files" target="_blank">
+          <code>ls-files</code>
+        </Link>{' '}
+        command:
       </p>
       <Code lang="ts">
         {dedent.withOptions({ escapeSpecialCharacters: false })`

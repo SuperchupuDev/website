@@ -146,7 +146,11 @@ export default function Page() {
       </h3>
       <p>
         <code>tinyglobby</code> is used by many projects of the JavaScript ecosystem, leading to over 25 million weekly
-        downloads. It's being developed in my free time.
+        downloads. It's being developed in my spare time. Consider{' '}
+        <Link href="https://github.com/sponsors/SuperchupuDev" target="_blank" rel="noreferrer">
+          sponsoring
+        </Link>{' '}
+        if you'd like to support the development of this project and make my involvement more sustainable.
       </p>
       <div id="chart-container">
         <iframe
