@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <main>
       <h1>library comparison</h1>
-      <h2>Syntax</h2>
+      <h2 id="syntax">Syntax</h2>
       <p>
         <code>tinyglobby</code> supports the same glob syntax{' '}
         <Link href="https://github.com/micromatch/picomatch" target="_blank">
@@ -33,7 +33,7 @@ export default function Page() {
         </Link>
         .
       </p>
-      <h3>Brace expansions</h3>
+      <h3 id="brace-expansions">Brace expansions</h3>
       <p>
         Despite{' '}
         <Link href="https://github.com/micromatch/picomatch#braces" target="_blank">
@@ -55,7 +55,7 @@ export default function Page() {
         all. <code>tinyglobby</code> has never come across a user report of something breaking after switching due to
         the lack of these brace features.
       </p>
-      <h3>Trailing slashes</h3>
+      <h3 id="trailing-slashes">Trailing slashes</h3>
       <p>
         In{' '}
         <Link href="https://github.com/outslept/glob-comparison#16-trailing-slash-semantics" target="_blank">
@@ -87,8 +87,8 @@ export default function Page() {
         </Link>{' '}
         for an in-depth comparison of syntax features across glob libraries.
       </em>
-      <h2>Options</h2>
-      <h3>
+      <h2 id="options">Options</h2>
+      <h3 id="expandDirectories">
         <code className="inline-code-heading">expandDirectories</code>
       </h3>
       <p>
@@ -120,7 +120,20 @@ export default function Page() {
           });
         `}
       </Code>
-      <h2>Results</h2>
+      <h3 id="deep">
+        <code className="inline-code-heading">deep</code>
+      </h3>
+      <p>
+        The{' '}
+        <Link href="/tinyglobby/documentation#deep">
+          <code>deep</code>
+        </Link>{' '}
+        option works in a different way than <code>globby</code> and <code>fast-glob</code>. I can't remember the exact
+        difference, but <code>tinyglobby</code>'s implementation works in a way such that it only crawls that number of
+        subdirectories at most.
+      </p>
+      <h2 id="results">Results</h2>
+      <h3 id="format">Format</h3>
       <p>
         The format of the results is not affected in any way by the patterns used. This means that providing an absolute
         pattern will not result in an absolute path being returned. Use the{' '}
@@ -151,6 +164,21 @@ export default function Page() {
           assert.deepEqual(files2.sort(), ['./package.json', '/home/meow/project/luigi.png']);
         `}
       </Code>
+      <h3 id="ordering">Ordering</h3>
+      <p>
+        Despite being consistent most of the time, <code>tinyglobby</code>'s order of results is non-deterministic.
+      </p>
+      <p>
+        <code>globby</code> and <code>fast-glob</code> also do not return results in a deterministic order, according to{' '}
+        <Link href="https://github.com/sindresorhus/globby/issues/131" target="_blank">
+          this issue
+        </Link>{' '}
+        and{' '}
+        <Link href="https://github.com/mrmlnc/fast-glob#readme" target="_blank">
+          <code>fast-glob</code>'s README
+        </Link>
+        .
+      </p>
     </main>
   );
 }

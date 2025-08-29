@@ -65,7 +65,7 @@ export default function Page() {
       <p>
         See the <Link href="/tinyglobby/documentation">documentation page</Link> for an overview of the library's API.
       </p>
-      <h3>Speed and Size</h3>
+      <h3 id="speed-and-size">Speed and Size</h3>
       <p>
         <code>tinyglobby</code> is{' '}
         <Link
@@ -146,7 +146,7 @@ export default function Page() {
       </h3>
       <p>
         <code>tinyglobby</code> is used by many projects of the JavaScript ecosystem, leading to over 25 million weekly
-        downloads.
+        downloads. It's being developed in my free time.
       </p>
       <div id="chart-container">
         <iframe
