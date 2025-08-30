@@ -1,11 +1,6 @@
 :root {
-  --text-color: black;
-  --pronouns: purple;
-}
-
-[data-theme="dark"] {
-  --text-color: white;
-  --pronouns: pink;
+  --text-color: light-dark(black, white);
+  --pronouns: light-dark(purple, pink);
 }
 
 .pronouns {

@@ -1,4 +1,17 @@
 :root {
+  color-scheme: light dark;
+
+  /*
+    theme selector that requires no javascript. yes, really
+    adapted from https://lyra.horse/blog/2025/08/you-dont-need-js
+  */
+  &:has(#theme-selector > option[value="light"]:checked) {
+    color-scheme: light;
+  }
+  &:has(#theme-selector > option[value="dark"]:checked) {
+    color-scheme: dark;
+  }
+
   /* workaround until browsers implement https://github.com/w3c/csswg-drafts/issues/5254#issuecomment-2876773927 */
   container-type: inline-size;
 }
@@ -41,6 +54,11 @@ header {
   }
 }
 
+code {
+  /* 15/16, alternative to doing 15px */
+  font-size: 0.9375rem;
+}
+
 .sub {
   vertical-align: sub;
 }
@@ -54,25 +72,24 @@ header {
   padding: 15px;
 }
 
-code {
-  /* 15/16, alternative to doing 15px */
-  font-size: 0.9375rem;
+.twoslash {
+  --twoslash-popup-bg: light-dark(
+    hsl(from var(--shiki-light-bg) h s calc(l - 3)),
+    hsl(from var(--shiki-dark-bg) h s calc(l + 3))
+  );
 }
 
 :not(.shiki) > code:not(.twoslash-popup-code) {
   padding: 0 4px;
   border-radius: 0.2rem;
-  background-color: #e8e8e8;
-  :root[data-theme="dark"] & {
-    background-color: #0d1117;
-  }
+  background-color: light-dark(#e8e8e8, #0d1117);
 }
 
 pre:not(.twoslash) {
   overflow-x: auto;
 }
 
-.twoslash .twoslash-popup-code {
+.twoslash-popup-code {
   /*
     codeblock padding - 15px
     twoslash padding - 8px * 2
@@ -83,20 +100,12 @@ pre:not(.twoslash) {
   */
   max-width: calc(100cqw - max((100cqw - 900px) / 2, 8px) - 33px);
   overflow-x: auto;
+
+  & > pre {
+    background-color: var(--twoslash-popup-bg) !important;
+  }
 }
 
 .no-jsdoc.twoslash .twoslash-popup-docs {
   display: none;
-}
-
-[data-theme="dark"] {
-  .shiki,
-  .shiki span {
-    color: var(--shiki-dark) !important;
-    background-color: var(--shiki-dark-bg) !important;
-    font-style: var(--shiki-dark-font-style) !important;
-    font-weight: var(--shiki-dark-font-weight) !important;
-    text-decoration: var(--shiki-dark-text-decoration) !important;
-    --twoslash-popup-bg: var(--shiki-dark-bg) !important;
-  }
 }

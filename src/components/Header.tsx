@@ -1,17 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+
+function saveTheme(theme: string) {
+  localStorage.setItem('theme', theme);
+}
 
 export const Header = () => {
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
     <header>
       <nav>
@@ -27,12 +22,7 @@ export const Header = () => {
           sponsor
         </Link>
       </nav>
-      <select
-        id="theme-selector"
-        aria-label="Theme selector"
-        value={mounted ? theme : ''}
-        onChange={e => setTheme(e.target.value)}
-      >
+      <select id="theme-selector" aria-label="Theme selector" onChange={e => saveTheme(e.target.value)}>
         <option value="system">System</option>
         <option value="dark">Dark</option>
         <option value="light">Light</option>

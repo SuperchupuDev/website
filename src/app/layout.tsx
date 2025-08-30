@@ -1,5 +1,5 @@
+import dedent from 'dedent';
 import type { Metadata, Viewport } from 'next';
-import { ThemeProvider } from 'next-themes';
 import type { ReactNode } from 'react';
 import { Header } from '#components/Header.tsx';
 
@@ -20,15 +20,22 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <head>
         <link rel="icon" href="/images/meee.png" type="image/png" />
       </head>
       <body>
-        <ThemeProvider>
-          <Header />
-          {children}
-        </ThemeProvider>
+        <Header />
+        <script>
+          {dedent`
+            const theme = localStorage.getItem('theme');
+            if (theme) {
+              document.getElementById('theme-selector').value = theme;
+              console.log('[debug] yes hello that is me,', theme);
+            }
+          `}
+        </script>
+        {children}
       </body>
     </html>
   );

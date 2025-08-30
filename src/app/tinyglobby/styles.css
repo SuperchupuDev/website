@@ -47,14 +47,6 @@ hr {
   z-index: 100;
 }
 
-[data-theme="dark"] #sidebar-button {
-  color: white;
-  background-color: #2b2a33;
-  &:hover {
-    background-color: #52525e;
-  }
-}
-
 @container (width <= 1350px) {
   #sidebar {
     display: none;

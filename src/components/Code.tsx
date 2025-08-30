@@ -24,6 +24,7 @@ export function Code(props: CodeProps) {
       light: 'github-light-default',
       dark: 'github-dark-default'
     },
+    defaultColor: 'light-dark()',
     transformers: getTransformers()
   });
 
