@@ -1,7 +1,7 @@
 main,
 #edit-page {
   justify-content: center;
-  max-width: calc(100vw - 16px);
+  max-width: calc(100cqw - 16px);
   margin-left: auto;
   margin-right: auto;
   width: 900px;
@@ -55,7 +55,7 @@ hr {
   }
 }
 
-@media (max-width: 1350px) {
+@container (width <= 1350px) {
   #sidebar {
     display: none;
     top: 0;
@@ -99,7 +99,7 @@ hr {
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  height: 1em;
+  height: 1lh;
   mask-image: linear-gradient(90deg, #000 60%, transparent);
   flex: 1;
   & > * {
@@ -147,7 +147,8 @@ hr {
   height: 540px;
   width: 760px;
   max-width: 100%;
-  @media (max-width: 655px) {
+  @container (width <= 655px) {
+    /* biome-ignore lint/suspicious/noDuplicateProperties: biome bug */
     height: 530px;
   }
 }
@@ -159,11 +160,12 @@ hr {
   top: -90px;
   height: calc(100% + 90px);
   width: 100%;
-  @media (max-width: 655px) {
+  @container (width <= 655px) {
+    /* biome-ignore lint/suspicious/noDuplicateProperties: biome bug */
     top: -134px;
     height: calc(100% + 134px);
   }
-  @media (max-width: 494px) {
+  @container (width <= 494px) {
     top: -158px;
     height: calc(100% + 158px);
   }

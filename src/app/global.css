@@ -1,3 +1,8 @@
+:root {
+  /* workaround until browsers implement https://github.com/w3c/csswg-drafts/issues/5254#issuecomment-2876773927 */
+  container-type: inline-size;
+}
+
 header {
   display: flex;
   position: relative;
@@ -12,7 +17,8 @@ header {
   padding-left: 30px;
   width: calc(100% - 30px);
 
-  @media (min-width: 960px) {
+  @container (width >= 960px) {
+    /* biome-ignore lint/suspicious/noDuplicateProperties: biome bug */
     position: fixed;
     /* twoslash popups are z-index 9 */
     z-index: 10;
@@ -75,7 +81,7 @@ pre:not(.twoslash) {
 
     minimum body margin - 8px
   */
-  max-width: calc(100vw - max((100vw - 900px) / 2, 8px) - 33px);
+  max-width: calc(100cqw - max((100cqw - 900px) / 2, 8px) - 33px);
   overflow-x: auto;
 }
 
