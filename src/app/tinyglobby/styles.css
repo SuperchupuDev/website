@@ -80,36 +80,45 @@ hr {
 
 #used-by {
   display: flex;
-  align-items: center;
+  align-items: top;
+  white-space: pre;
   overflow: hidden;
-  white-space: pre-wrap;
-  row-gap: 6px;
-}
 
-#used-by-entries {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  height: 1lh;
-  mask-image: linear-gradient(90deg, #000 60%, transparent);
-  flex: 1;
-  & > * {
+  & > ul {
     display: flex;
+    flex: 1;
     flex-direction: column;
-    width: max-content;
+    margin: 0;
+    padding-left: 0;
+    height: 1lh;
+    overflow: hidden;
+    list-style: none;
+    mask-image: linear-gradient(90deg, #000 60%, transparent);
 
-    /*
-      rare css-only marquee with no duplication
-      i have no idea how this works
-      https://codepen.io/bitgrip-thomas/pen/mdZbgXN
-    */
-    --marquee-item-position: calc(var(--marquee-item-index) + 1);
-    --duration: 45s;
-    --duration-per-item: calc(var(--duration) / var(--marquee-count));
-    --delay: calc(-1 * var(--duration-per-item) * (var(--marquee-count) - var(--marquee-item-position)));
+    @media (prefers-reduced-motion) {
+      flex-direction: row;
+      height: auto;
+      overflow-x: auto;
+      gap: 1em;
+    }
 
-    animation: scroll-up var(--duration) var(--delay) linear infinite;
+    & > li {
+      /*
+        rare css-only marquee with no duplication
+        i have no idea how this works
+        https://codepen.io/bitgrip-thomas/pen/mdZbgXN
+      */
+      --marquee-item-position: calc(var(--marquee-item-index) + 1);
+      --duration: 45s;
+      --duration-per-item: calc(var(--duration) / var(--marquee-count));
+      --delay: calc(-1 * var(--duration-per-item) * (var(--marquee-count) - var(--marquee-item-position)));
+
+      animation: scroll-up var(--duration) var(--delay) linear infinite;
+
+      @media (prefers-reduced-motion) {
+        animation: none;
+      }
+    }
   }
 }
 
@@ -119,16 +128,6 @@ hr {
   }
   to {
     translate: 0 calc(-100% * var(--marquee-item-position));
-  }
-}
-
-@media (prefers-reduced-motion) {
-  #used-by-entries {
-    overflow-y: auto;
-    height: 40px;
-    & > * {
-      animation: none !important;
-    }
   }
 }
 

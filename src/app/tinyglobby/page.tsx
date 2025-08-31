@@ -131,18 +131,15 @@ export default function Page() {
       </p>
       <h3 id="used-by">
         Used by{' '}
-        <div id="used-by-entries" style={{ '--marquee-count': projects.length } as CSSProperties}>
+        <ul style={{ '--marquee-count': projects.length } as CSSProperties}>
           {projects.map((entry, i) => (
-            <Link
-              style={{ '--marquee-item-index': i } as CSSProperties}
-              key={entry.name}
-              target="_blank"
-              href={`https://github.com/${entry.repo}`}
-            >
-              {entry.name}
-            </Link>
+            <li key={entry.name} style={{ '--marquee-item-index': i } as CSSProperties}>
+              <Link href={`https://github.com/${entry.repo}`} target="_blank">
+                {entry.name}
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </h3>
       <p>
         <code>tinyglobby</code> is used by many projects of the JavaScript ecosystem, leading to over 25 million weekly

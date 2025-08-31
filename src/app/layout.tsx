@@ -31,7 +31,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             const theme = localStorage.getItem('theme');
             if (theme) {
               document.getElementById('theme-selector').value = theme;
-              console.log('[debug] yes hello that is me,', theme);
             }
           `}
         </script>
