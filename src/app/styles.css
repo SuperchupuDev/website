@@ -1,22 +1,19 @@
-:root {
-  --text-color: light-dark(black, white);
-  --pronouns: light-dark(purple, pink);
-}
-
 .pronouns {
-  animation: pronouns 2s linear infinite;
+  color: light-dark(purple, pink);
+  animation: flash 2s linear infinite alternate;
+  @media (prefers-reduced-motion) {
+    animation: none;
+  }
 }
 
-@keyframes pronouns {
-  0% {
-    color: var(--pronouns);
+@keyframes flash {
+  to {
+    color: CanvasText;
   }
-  50% {
-    color: var(--text-color);
-  }
-  100% {
-    color: var(--pronouns);
-  }
+}
+
+#projects > li {
+  padding: 0.2em 0;
 }
 
 .marquee {
@@ -25,25 +22,34 @@
   white-space: nowrap;
   height: 400px;
   width: 400px;
-  max-height: calc(100vw - 16px);
-  max-width: calc(100vw - 16px);
+  max-height: calc(100cqw - 16px);
+  max-width: calc(100cqw - 16px);
 }
 
 .cat {
-  max-height: calc(100vw - 16px);
-  max-width: calc(100vw - 16px);
+  max-height: calc(100cqw - 16px);
+  max-width: calc(100cqw - 16px);
 }
 
 .marquee-left {
   animation: left 2s linear infinite;
+  @media (prefers-reduced-motion) {
+    animation: none;
+  }
 }
 
 .marquee-up {
   animation: up 2s linear infinite;
+  @media (prefers-reduced-motion) {
+    animation: none;
+  }
 }
 
 .marquee-bounce {
   animation: bounce 2s linear infinite;
+  @media (prefers-reduced-motion) {
+    animation: none;
+  }
 }
 
 @keyframes left {
@@ -73,17 +79,5 @@
   }
   100% {
     transform: translateX(-25%);
-  }
-}
-
-@media (prefers-reduced-motion) {
-  .pronouns {
-    animation: none !important;
-    color: var(--pronouns);
-  }
-  .marquee-left,
-  .marquee-up,
-  .marquee-bounce {
-    animation: none !important;
   }
 }

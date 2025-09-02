@@ -9,29 +9,32 @@ export default function Page() {
       <h1>superchupu's (work in progress) tiny website</h1>
       <h2>
         hiiiiiiiii im madeline{' '}
-        <sup className="pronouns" title="waow">
+        <small className="sup pronouns" title="yup">
           she/it
-        </sup>{' '}
+        </small>{' '}
         i love coding :3
       </h2>
-      am a spanish cat who for some reason likes to code in javascript. i like to contribute to open source projects in
-      my free time.
-      <br />
-      heres some stuff i code
-      <br />
-      <br />
-      <Link href="/tinyglobby">tinyglobby</Link>
-      <br />
-      <Link href="https://thefunniestcatsofalltime.pages.dev" target="_blank">
-        thefunniestcatsofalltime.pages.dev
-      </Link>
-      <br />
-      <Link href="https://biomejs.dev" target="_blank">
-        biome
-      </Link>{' '}
-      (although i haven't contributed much and ive been kinda inactive :P i really need to properly learn rust sowy)
-      <br />
-      <br />
+      <p>
+        am a spanish cat who for some reason likes to code in javascript. i like to contribute to open source projects
+        in my free time.
+      </p>
+      <p>heres some stuff i code</p>
+      <ul id="projects">
+        <li>
+          <Link href="/tinyglobby">tinyglobby</Link>
+        </li>
+        <li>
+          <Link href="https://thefunniestcatsofalltime.pages.dev" target="_blank">
+            thefunniestcatsofalltime.pages.dev
+          </Link>
+        </li>
+        <li>
+          <Link href="https://biomejs.dev" target="_blank">
+            biome
+          </Link>{' '}
+          (although i haven't contributed much and ive been kinda inactive :P i really need to properly learn rust sowy)
+        </li>
+      </ul>
       <Cats />
       <h4>
         did you know? i have a blog. if i ever decide to write something there you can check it out{' '}
