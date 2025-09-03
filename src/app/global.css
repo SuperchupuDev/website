@@ -89,6 +89,11 @@ pre:not(.twoslash) {
   overflow-x: auto;
 }
 
+.twoslash-hover {
+  border: none !important;
+  transition: none !important;
+}
+
 .twoslash-popup-code {
   /*
     codeblock padding - 15px
@@ -102,6 +107,8 @@ pre:not(.twoslash) {
   overflow-x: auto;
 
   & > pre {
+    margin: 0;
+    padding: 0;
     background-color: var(--twoslash-popup-bg) !important;
   }
 }

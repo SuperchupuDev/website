@@ -77,7 +77,7 @@ export default function Page() {
         </Code>
       </APIEntry>
       <hr />
-      <APIEntry marginBottom={'7.2em'} name="isDynamicPattern">
+      <APIEntry marginBottom={'3.9em'} name="isDynamicPattern">
         <p>Checks if a pattern has dynamic parts.</p>
         <p>
           Has a few minor differences with{' '}
