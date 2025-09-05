@@ -9,5 +9,6 @@
     "helpers:pinGitHubActionDigestsToSemver"
   ],
   "rangeStrategy": "bump",
+  "ignoreDeps": ["node"],
   "postUpdateOptions": ["pnpmDedupe"]
 }
