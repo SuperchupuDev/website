@@ -36,9 +36,6 @@
         "noUnusedVariables": "error",
         "noInvalidBuiltinInstantiation": "error"
       },
-      "nursery": {
-        "useUniqueElementIds": "off"
-      },
       "style": {
         "noNegationElse": "error",
         "useBlockStatements": "error",
