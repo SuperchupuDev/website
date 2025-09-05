@@ -33,8 +33,8 @@ importers:
         specifier: ^3.7.0
         version: 3.7.0
       tinyglobby:
-        specifier: https://pkg.pr.new/tinyglobby@225cca2
-        version: https://pkg.pr.new/tinyglobby@225cca2
+        specifier: https://pkg.pr.new/tinyglobby@c911fae
+        version: https://pkg.pr.new/tinyglobby@c911fae
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.0.5
@@ -818,8 +818,8 @@ packages:
       babel-plugin-macros:
         optional: true
 
-  tinyglobby@https://pkg.pr.new/tinyglobby@225cca2:
-    resolution: {tarball: https://pkg.pr.new/tinyglobby@225cca2}
+  tinyglobby@https://pkg.pr.new/tinyglobby@c911fae:
+    resolution: {tarball: https://pkg.pr.new/tinyglobby@c911fae}
     version: 0.2.14
     engines: {node: '>=12.0.0'}
 
@@ -1927,7 +1927,7 @@ snapshots:
       client-only: 0.0.1
       react: 19.1.0
 
-  tinyglobby@https://pkg.pr.new/tinyglobby@225cca2:
+  tinyglobby@https://pkg.pr.new/tinyglobby@c911fae:
     dependencies:
       fdir: 6.5.0(picomatch@4.0.3)
       picomatch: 4.0.3

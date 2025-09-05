@@ -26,7 +26,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "shiki": "^3.7.0",
-    "tinyglobby": "https://pkg.pr.new/tinyglobby@225cca2"
+    "tinyglobby": "https://pkg.pr.new/tinyglobby@c911fae"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.0.5",

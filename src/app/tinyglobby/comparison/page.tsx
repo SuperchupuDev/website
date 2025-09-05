@@ -1,6 +1,12 @@
 import dedent from 'dedent';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Code } from '#components/Code.tsx';
+
+export const metadata: Metadata = {
+  title: 'library comparison',
+  description: 'Syntax and feature comparison across glob libraries'
+};
 
 export default function Page() {
   return (
@@ -128,9 +134,31 @@ export default function Page() {
         <Link href="/tinyglobby/documentation#deep">
           <code>deep</code>
         </Link>{' '}
-        option works in a different way than <code>globby</code> and <code>fast-glob</code>. I can't remember the exact
-        difference, but <code>tinyglobby</code>'s implementation works in a way such that it only crawls that number of
-        subdirectories at most.
+        option works in a different way than <code>globby</code> and <code>fast-glob</code>.
+      </p>
+      <p>
+        <code>globby</code> and <code>fast-glob</code> follow the following rule:
+      </p>
+      <ul>
+        <li>
+          At each directory, compute the directory's level (number of path segments relative to the leading static part
+          of a pattern).
+        </li>
+        <li>
+          If the level is greater than or equal to <code>deep</code>, stop descending into that directory.
+        </li>
+      </ul>
+      <p>
+        In contrast, for performance and other technical reasons, <code>tinyglobby</code>'s approach is different. It
+        uses{' '}
+        <Link href="https://github.com/thecodrr/fdir" target="_blank">
+          <code>fdir</code>
+        </Link>
+        's{' '}
+        <Link href="https://github.com/thecodrr/fdir/blob/master/documentation.md#withmaxdepthnumber" target="_blank">
+          <code>maxDepth</code>
+        </Link>{' '}
+        option, which makes it limit the depth when crawling subdirectories.
       </p>
       <h2 id="results">Results</h2>
       <h3 id="format">Format</h3>

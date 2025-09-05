@@ -1,6 +1,11 @@
 import dedent from 'dedent';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Code } from '#components/Code.tsx';
+
+export const metadata: Metadata = {
+  title: 'migration guide'
+};
 
 export default function Page() {
   return (
@@ -58,7 +63,7 @@ export default function Page() {
       <Code lang="ts">
         {dedent.withOptions({ escapeSpecialCharacters: false })`
           import { execSync } from 'node:child_process';
-          import { glob } from 'tinyglobby';
+          import { glob, escapePath } from 'tinyglobby';
 
           async function globWithGitignore(patterns, options = {}) {
             const { cwd = process.cwd(), ...restOptions } = options;
@@ -69,7 +74,8 @@ export default function Page() {
                 { cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }
               )
               .split('\n')
-              .filter(Boolean);
+              .filter(Boolean)
+              .map(p => escapePath(p));
 
               return glob(patterns, {
                 ...restOptions,
@@ -107,7 +113,7 @@ export default function Page() {
       <strong>Before:</strong>
       <Code lang="ts">
         {dedent`
-          import glob from 'fast-glob';
+          import { glob } from 'fast-glob';
 
           await glob('src/*.ts');
         `}
@@ -119,6 +125,63 @@ export default function Page() {
 
           await glob('src/*.ts', {
             expandDirectories: false
+          });
+        `}
+      </Code>
+      <h3>
+        <code id="deep" className="inline-code-heading">
+          deep
+        </code>
+      </h3>
+      <p>
+        This option works in a different way than <code>fast-glob</code>. See the{' '}
+        <Link href="/tinyglobby/comparison">library comparison</Link> page for an in-depth explanation of how the
+        implementations differ.
+      </p>
+      <h3>
+        <code id="fs" className="inline-code-heading">
+          fs
+        </code>
+      </h3>
+      <p>
+        <code>tinyglobby</code>'s{' '}
+        <Link href="/tinyglobby/documentation#fs">
+          <code>fs</code>
+        </Link>{' '}
+        option accepts different functions as <code>fast-glob</code>, you might need to change your usage to account for
+        this.
+      </p>
+      <p>
+        Currently, the only difference in the object is that instead of accepting an <code>lstat</code> function, it
+        accepts a <code>realpath</code> function instead.
+      </p>
+      <p>A migration can look like this:</p>
+      <strong>Before:</strong>
+      <Code lang="ts">
+        {dedent`
+          import { glob } from 'fast-glob';
+
+          await glob('src/*.ts', {
+            fs: {
+              lstat: myFs.lstat,
+              readdir: myFs.readdir,
+              stat: myFs.stat
+            }
+          });
+        `}
+      </Code>
+      <strong>After:</strong>
+      <Code lang="ts">
+        {dedent`
+          import { glob } from 'tinyglobby';
+
+          await glob('src/*.ts', {
+            expandDirectories: false,
+            fs: {
+              realpath: myFs.realpath,
+              readdir: myFs.readdir,
+              stat: myFs.stat
+            }
           });
         `}
       </Code>
