@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.5/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.3/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -30,13 +30,14 @@
       "a11y": {
         "noDistractingElements": "off"
       },
+      "complexity": {
+        "noImportantStyles": "off"
+      },
       "correctness": {
         "noUndeclaredVariables": "error",
         "noUnusedPrivateClassMembers": "error",
         "noUnusedVariables": "error",
-        "noInvalidBuiltinInstantiation": "error"
-      },
-      "nursery": {
+        "noInvalidBuiltinInstantiation": "error",
         "useUniqueElementIds": "off"
       },
       "style": {
