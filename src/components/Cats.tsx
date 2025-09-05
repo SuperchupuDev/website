@@ -7,7 +7,7 @@ export const Cats = () => (
     <h3>this is me</h3>
     <div className="marquee">
       <Image
-        className="cat marquee-left"
+        className="marquee-left"
         src="/images/meee.png"
         alt="me"
         width={400}
@@ -20,7 +20,7 @@ export const Cats = () => (
     <h3>this is my dad's cat</h3>
     <div className="marquee">
       <Image
-        className="cat marquee-bounce"
+        className="marquee-bounce"
         src="/images/luigi.png"
         alt="luigi"
         width={400}
@@ -33,7 +33,7 @@ export const Cats = () => (
     <h3>actually he adopted two more</h3>
     <div className="marquee">
       <Image
-        className="cat marquee-up"
+        className="marquee-up"
         src="/images/vespines.png"
         alt="vespín [right] and vespina [left]"
         width={400}

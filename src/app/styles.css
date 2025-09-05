@@ -24,11 +24,10 @@
   width: 400px;
   max-height: calc(100cqw - 16px);
   max-width: calc(100cqw - 16px);
-}
-
-.cat {
-  max-height: calc(100cqw - 16px);
-  max-width: calc(100cqw - 16px);
+  & > img {
+    max-height: inherit;
+    max-width: inherit;
+  }
 }
 
 .marquee-left {
@@ -46,38 +45,35 @@
 }
 
 .marquee-bounce {
-  animation: bounce 2s linear infinite;
+  animation: right-25 1s linear infinite alternate;
   @media (prefers-reduced-motion) {
     animation: none;
   }
 }
 
 @keyframes left {
-  0% {
+  from {
     transform: translateX(100%);
   }
-  100% {
+  to {
     transform: translateX(-100%);
   }
 }
 
 @keyframes up {
-  0% {
+  from {
     transform: translateY(100%);
   }
-  100% {
+  to {
     transform: translateY(-100%);
   }
 }
 
-@keyframes bounce {
-  0% {
+@keyframes right-25 {
+  from {
     transform: translateX(-25%);
   }
-  50% {
+  to {
     transform: translateX(25%);
-  }
-  100% {
-    transform: translateX(-25%);
   }
 }
