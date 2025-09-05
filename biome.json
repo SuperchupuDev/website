@@ -30,11 +30,15 @@
       "a11y": {
         "noDistractingElements": "off"
       },
+      "complexity": {
+        "noImportantStyles": "off"
+      },
       "correctness": {
         "noUndeclaredVariables": "error",
         "noUnusedPrivateClassMembers": "error",
         "noUnusedVariables": "error",
-        "noInvalidBuiltinInstantiation": "error"
+        "noInvalidBuiltinInstantiation": "error",
+        "useUniqueElementIds": "off"
       },
       "style": {
         "noNegationElse": "error",
