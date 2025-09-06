@@ -2,7 +2,7 @@ import dedent from 'dedent';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
-import { convertPathToPattern, type GlobOptions } from 'tinyglobby';
+import { convertPathToPattern, type GlobOptions, isDynamicPattern } from 'tinyglobby';
 import pkg from 'tinyglobby/package.json' with { type: 'json' };
 import { Code } from '#components/Code.tsx';
 
@@ -38,7 +38,7 @@ export default function Page() {
           {dedent`
             import { globSync } from 'tinyglobby';
 
-            const files = await globSync('src/**', {
+            const files = globSync('src/**', {
               cwd: './projects/best-cats'
             });
           `}
@@ -58,7 +58,7 @@ export default function Page() {
           {dedent`
             import { convertPathToPattern } from 'tinyglobby';
 
-            convertPathToPattern("[413] home stuck funny moments*.mp4");
+            convertPathToPattern('[413] home stuck funny moments*.mp4');
             // Returns "${convertPathToPattern('[413] home stuck funny moments*.mp4')}"
           `}
         </Code>
@@ -71,8 +71,8 @@ export default function Page() {
           {dedent`
             import { escapePath } from 'tinyglobby';
 
-            escapePath("!!()!()i use linux and i can use \\ in filenames!!()!");
-            // Returns "${convertPathToPattern('!!()!()i use linux and i can use \\ in filenames!!()!')}"
+            escapePath('i use linux and i can use \\ in filenames!!()!');
+            // Returns "${convertPathToPattern('i use linux and i can use \\ in filenames!!()!')}"
           `}
         </Code>
       </APIEntry>
@@ -105,10 +105,13 @@ export default function Page() {
         <strong>Usage:</strong>
         <Code lang="ts">
           {dedent`
-            import { convertPathToPattern } from 'tinyglobby';
+            import { isDynamicPattern } from 'tinyglobby';
 
-            convertPathToPattern("[413] home stuck funny moments*.mp4");
-            // Returns "${convertPathToPattern('[413] home stuck funny moments*.mp4')}"
+            isDynamicPattern('my-dream.txt');
+            // ^ ${isDynamicPattern('my-dream.txt')}
+
+            isDynamicPattern('star.*');
+            // ^ ${isDynamicPattern('star.*')}
           `}
         </Code>
       </APIEntry>
