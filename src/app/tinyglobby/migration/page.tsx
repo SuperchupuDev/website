@@ -113,7 +113,7 @@ export default function Page() {
       <strong>Before:</strong>
       <Code lang="ts">
         {dedent`
-          import { glob } from 'fast-glob';
+          import glob from 'fast-glob';
 
           await glob('src/*.ts');
         `}
@@ -159,7 +159,7 @@ export default function Page() {
       <strong>Before:</strong>
       <Code lang="ts">
         {dedent`
-          import { glob } from 'fast-glob';
+          import glob from 'fast-glob';
 
           await glob('src/*.ts', {
             fs: {
