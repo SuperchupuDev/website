@@ -11,6 +11,9 @@ importers:
       '@primer/octicons-react':
         specifier: ^19.17.0
         version: 19.17.0(react@19.1.1)
+      '@shikijs/transformers':
+        specifier: ^3.12.2
+        version: 3.12.2
       '@shikijs/twoslash':
         specifier: ^3.12.2
         version: 3.12.2(typescript@5.9.2)
@@ -317,6 +320,9 @@ packages:
 
   '@shikijs/themes@3.12.2':
     resolution: {integrity: sha512-fTR3QAgnwYpfGczpIbzPjlRnxyONJOerguQv1iwpyQZ9QXX4qy/XFQqXlf17XTsorxnHoJGbH/LXBvwtqDsF5A==}
+
+  '@shikijs/transformers@3.12.2':
+    resolution: {integrity: sha512-+z1aMq4N5RoNGY8i7qnTYmG2MBYzFmwkm/yOd6cjEI7OVzcldVvzQCfxU1YbIVgsyB0xHVc2jFe1JhgoXyUoSQ==}
 
   '@shikijs/twoslash@3.12.2':
     resolution: {integrity: sha512-JthKvEvyE/gbu3u693mhNhEO6GYP1vetrwgEfqTAsT/G9AJ6nf7g7JVqdTSs+axdfilGWzZKeYdjfyanu/v5AA==}
@@ -1117,6 +1123,11 @@ snapshots:
 
   '@shikijs/themes@3.12.2':
     dependencies:
+      '@shikijs/types': 3.12.2
+
+  '@shikijs/transformers@3.12.2':
+    dependencies:
+      '@shikijs/core': 3.12.2
       '@shikijs/types': 3.12.2
 
   '@shikijs/twoslash@3.12.2(typescript@5.9.2)':

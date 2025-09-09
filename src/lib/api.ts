@@ -1,5 +1,6 @@
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { transformerNotationDiff } from '@shikijs/transformers';
 import { transformerTwoslash } from '@shikijs/twoslash';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import {
@@ -67,7 +68,7 @@ export async function getHighlighter<L extends BundledLanguage, T extends Bundle
 let transformers: ShikiTransformer[];
 export function getTransformers() {
   if (!transformers) {
-    transformers = [transformerTwoslash({ explicitTrigger: true })];
+    transformers = [transformerNotationDiff(), transformerTwoslash({ explicitTrigger: true })];
   }
   return transformers;
 }

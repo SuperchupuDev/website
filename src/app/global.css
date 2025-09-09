@@ -69,7 +69,7 @@ code {
 
 .shiki {
   border-radius: 8px;
-  padding: 15px;
+  padding: 0.9375rem;
 }
 
 .twoslash {
@@ -83,6 +83,45 @@ code {
   padding: 0 4px;
   border-radius: 0.2rem;
   background-color: light-dark(#e8e8e8, #0d1117);
+}
+
+.has-diff {
+  .line:not(.diff) {
+    padding-left: 1.5rem;
+  }
+
+  & > code {
+    display: inline-block;
+    margin: 0 -0.9375rem;
+    padding: 0 0.9375rem;
+    width: 100%;
+    min-width: max-content;
+  }
+}
+
+.diff {
+  display: inline-block;
+  margin: inherit;
+  padding: inherit;
+  width: inherit;
+
+  &::before {
+    padding-right: 0.9375rem;
+  }
+
+  &.remove {
+    background-color: light-dark(rgb(255, 235, 233), rgba(248, 81, 73, 0.1));
+    &::before {
+      content: "-";
+    }
+  }
+
+  &.add {
+    background-color: light-dark(rgb(218, 251, 225), rgba(46, 160, 67, 0.15));
+    &::before {
+      content: "+";
+    }
+  }
 }
 
 pre:not(.twoslash) {

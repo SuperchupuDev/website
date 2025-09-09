@@ -110,21 +110,13 @@ export default function Page() {
         <code>fast-glob</code> forget to do this. In 99% of cases, you want this off, unless you want to recreate how{' '}
         <code>globby</code> works. Looking back this option should probably have been disabled by default.
       </p>
-      <strong>Before:</strong>
       <Code lang="ts">
         {dedent`
-          import glob from 'fast-glob';
-
-          await glob('src/*.ts');
-        `}
-      </Code>
-      <strong>After:</strong>
-      <Code lang="ts">
-        {dedent`
-          import { glob } from 'tinyglobby';
+          import glob from 'fast-glob';// [!code --]
+          import { glob } from 'tinyglobby';// [!code ++]
 
           await glob('src/*.ts', {
-            expandDirectories: false
+            expandDirectories: false// [!code ++]
           });
         `}
       </Code>
@@ -156,29 +148,16 @@ export default function Page() {
         accepts a <code>realpath</code> function instead.
       </p>
       <p>A migration can look like this:</p>
-      <strong>Before:</strong>
       <Code lang="ts">
         {dedent`
-          import glob from 'fast-glob';
+          import glob from 'fast-glob';// [!code --]
+          import { glob } from 'tinyglobby';// [!code ++]
 
           await glob('src/*.ts', {
+            expandDirectories: false,// [!code ++]
             fs: {
-              lstat: myFs.lstat,
-              readdir: myFs.readdir,
-              stat: myFs.stat
-            }
-          });
-        `}
-      </Code>
-      <strong>After:</strong>
-      <Code lang="ts">
-        {dedent`
-          import { glob } from 'tinyglobby';
-
-          await glob('src/*.ts', {
-            expandDirectories: false,
-            fs: {
-              realpath: myFs.realpath,
+              lstat: myFs.lstat,// [!code --]
+              realpath: myFs.realpath,// [!code ++]
               readdir: myFs.readdir,
               stat: myFs.stat
             }
