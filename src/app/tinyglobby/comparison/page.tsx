@@ -177,19 +177,19 @@ export default function Page() {
           import { glob as nativeGlob } from 'node:fs/promises';
           import { glob } from 'tinyglobby';
 
-          const files = await glob(['./package.json', '/home/meow/project/luigi.png'], {
+          const files = await glob(['./package.json', '/home/meow/project/luigi.webp'], {
             expandDirectories: false
           });
 
           const files2 = await Array.fromAsync(
-            nativeGlob(['./package.json', '/home/meow/project/luigi.png'])
+            nativeGlob(['./package.json', '/home/meow/project/luigi.webp'])
           );
 
           // tinyglobby always produces the same paths format
-          assert.deepEqual(files.sort(), ['package.json', 'luigi.png']);
+          assert.deepEqual(files.sort(), ['package.json', 'luigi.webp']);
 
           // other libraries do not
-          assert.deepEqual(files2.sort(), ['./package.json', '/home/meow/project/luigi.png']);
+          assert.deepEqual(files2.sort(), ['./package.json', '/home/meow/project/luigi.webp']);
         `}
       </Code>
       <h3 id="ordering">Ordering</h3>

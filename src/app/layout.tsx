@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/images/meee.png" type="image/png" />
+        <link rel="icon" href="/images/meee.webp" type="image/webp" />
       </head>
       <body>
         <Header />

@@ -8,7 +8,7 @@ export const Cats = () => (
     <div className="marquee">
       <Image
         className="marquee-left"
-        src="/images/meee.png"
+        src="/images/meee.webp"
         alt="me"
         width={400}
         height={400}
@@ -21,7 +21,7 @@ export const Cats = () => (
     <div className="marquee">
       <Image
         className="marquee-bounce"
-        src="/images/luigi.png"
+        src="/images/luigi.webp"
         alt="luigi"
         width={400}
         height={400}
@@ -34,7 +34,7 @@ export const Cats = () => (
     <div className="marquee">
       <Image
         className="marquee-up"
-        src="/images/vespines.png"
+        src="/images/vespines.webp"
         alt="vespín [right] and vespina [left]"
         width={400}
         height={400}
