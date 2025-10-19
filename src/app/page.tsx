@@ -37,8 +37,7 @@ export default function Page() {
       </ul>
       <Cats />
       <h4>
-        did you know? i have a blog. if i ever decide to write something there you can check it out{' '}
-        <Link href="/blog">here</Link>
+        <Link href="/blog">did you know? i have a blog.</Link> you can check it out if i ever decide to write something
       </h4>
     </>
   );

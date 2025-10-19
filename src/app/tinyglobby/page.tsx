@@ -106,7 +106,7 @@ export default function Page() {
         </Link>{' '}
         of package size, compared to <code>globby</code>'s{' '}
         <Link href="https://pkg-size.dev/globby" target="_blank">
-          631KB
+          637KB
         </Link>{' '}
         and <code>fast-glob</code>'s{' '}
         <Link href="https://pkg-size.dev/fast-glob" target="_blank">
