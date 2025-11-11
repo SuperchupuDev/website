@@ -4,17 +4,26 @@
   margin-left: auto;
   margin-right: auto;
   width: 1000px;
-}
 
-#blog-post img {
-  max-width: calc(100cqw - 16px);
-  height: auto;
-}
+  img {
+    max-width: calc(100cqw - 16px);
+    height: auto;
+  }
 
-#blog-post h1 {
-  font-size: 36px;
-}
+  h1 {
+    font-size: 36px;
+  }
 
-#blog-post p {
-  font-size: 20px;
+  p {
+    font-size: 20px;
+  }
+
+  table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    td {
+      padding: 10px;
+      border: 1px solid gray;
+    }
+  }
 }

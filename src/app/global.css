@@ -31,7 +31,6 @@ header {
   width: calc(100% - 30px);
 
   @container (width >= 960px) {
-    /* biome-ignore lint/suspicious/noDuplicateProperties: biome bug */
     position: fixed;
     /* twoslash popups are z-index 9 */
     z-index: 10;

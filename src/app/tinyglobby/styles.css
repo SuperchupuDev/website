@@ -139,7 +139,6 @@ hr {
   width: 760px;
   max-width: 100%;
   @container (width <= 655px) {
-    /* biome-ignore lint/suspicious/noDuplicateProperties: biome bug */
     height: 530px;
   }
 }
@@ -152,7 +151,6 @@ hr {
   height: calc(100% + 90px);
   width: 100%;
   @container (width <= 655px) {
-    /* biome-ignore lint/suspicious/noDuplicateProperties: biome bug */
     top: -134px;
     height: calc(100% + 134px);
   }

@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import { transformerNotationDiff } from '@shikijs/transformers';
 import { transformerTwoslash } from '@shikijs/twoslash';
 import { compileMDX } from 'next-mdx-remote/rsc';
+import remarkGfm from 'remark-gfm';
 import {
   type BundledHighlighterOptions,
   type BundledLanguage,
@@ -40,7 +41,14 @@ export function getMDXFile(slug: string) {
 
 export async function getPost(slug: string, components?: MDXComponents) {
   const source = await getMDXFile(slug);
-  const result = (await compileMDX({ source, components, options: { parseFrontmatter: true } })) as Omit<Post, 'slug'>;
+  const result = (await compileMDX({
+    source,
+    components,
+    options: {
+      mdxOptions: { remarkPlugins: [remarkGfm] },
+      parseFrontmatter: true
+    }
+  })) as Omit<Post, 'slug'>;
   return { ...result, slug };
 }
 
