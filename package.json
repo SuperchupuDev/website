@@ -5,7 +5,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "next build",
     "check": "biome check",
     "check:fix": "biome check --write --unsafe",
