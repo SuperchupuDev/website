@@ -1,5 +1,9 @@
 [
   {
+    "name": "typescript-eslint",
+    "repo": "typescript-eslint/typescript-eslint"
+  },
+  {
     "name": "vite",
     "repo": "vitejs/vite"
   },
@@ -10,6 +14,10 @@
   {
     "name": "node-gyp",
     "repo": "nodejs/node-gyp"
+  },
+  {
+    "name": "sucrase",
+    "repo": "alangpierce/sucrase"
   },
   {
     "name": "eslint-import-resolver-typescript",
