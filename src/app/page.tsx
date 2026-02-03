@@ -35,6 +35,37 @@ export default function Page() {
           (although i haven't contributed much and ive been kinda inactive :P i really need to properly learn rust sowy)
         </li>
       </ul>
+      <p>
+        ive also{' '}
+        <Link href="https://superchupu.itch.io/" target="_blank">
+          made some games
+        </Link>{' '}
+        with friends in 48 hours each at{' '}
+        <Link href="https://malagajam.com/" target="_blank">
+          málagajam
+        </Link>
+        , a game jam. they are all in spanish but theyre still games
+      </p>
+      <ul id="projects">
+        <li>
+          <Link href="https://superchupu.itch.io/cascade" target="_blank">
+            Cascade
+          </Link>{' '}
+          (2026)
+        </li>
+        <li>
+          <Link href="https://superchupu.itch.io/fishtwt" target="_blank">
+            fishtwt
+          </Link>{' '}
+          (2025)
+        </li>
+        <li>
+          <Link href="https://superchupu.itch.io/eden" target="_blank">
+            Edén
+          </Link>{' '}
+          (2024)
+        </li>
+      </ul>
       <Cats />
       <h4>
         <Link href="/blog">did you know? i have a blog.</Link> you can check it out if i ever decide to write something
