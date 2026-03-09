@@ -1,79 +1,28 @@
-.pronouns {
-  color: light-dark(purple, pink);
-  animation: flash 2s linear infinite alternate;
-  @media (prefers-reduced-motion) {
-    animation: none;
+#intro {
+  text-align: justify;
+  max-width: 1000px;
+  padding: 0 8px;
+  margin: 0 auto;
+  & > h1 {
+    text-align: center;
   }
 }
 
-@keyframes flash {
-  to {
-    color: CanvasText;
-  }
+figure {
+  margin: 20px;
+  border: 1px solid gray;
+  padding: 5px;
+  text-align: center;
 }
 
-#projects > li {
-  padding: 0.2em 0;
+figcaption {
+  padding: 5px;
 }
 
-.marquee {
-  display: flex;
-  overflow: hidden;
-  white-space: nowrap;
-  height: 400px;
-  width: 400px;
-  max-height: calc(100cqw - 16px);
-  max-width: calc(100cqw - 16px);
-  & > img {
-    max-height: inherit;
-    max-width: inherit;
-  }
+#luigi {
+  float: right;
 }
 
-.marquee-left {
-  animation: left 2s linear infinite;
-  @media (prefers-reduced-motion) {
-    animation: none;
-  }
-}
-
-.marquee-up {
-  animation: up 2s linear infinite;
-  @media (prefers-reduced-motion) {
-    animation: none;
-  }
-}
-
-.marquee-bounce {
-  animation: right-25 1s linear infinite alternate;
-  @media (prefers-reduced-motion) {
-    animation: none;
-  }
-}
-
-@keyframes left {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes up {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(-100%);
-  }
-}
-
-@keyframes right-25 {
-  from {
-    transform: translateX(-25%);
-  }
-  to {
-    transform: translateX(25%);
-  }
+#vespines {
+  float: left;
 }
