@@ -19,15 +19,15 @@
   },
   "dependencies": {
     "@primer/octicons-react": "^19.21.1",
-    "@shikijs/transformers": "^3.19.0",
-    "@shikijs/twoslash": "^3.19.0",
+    "@shikijs/transformers": "^4.0.2",
+    "@shikijs/twoslash": "^4.0.2",
     "dedent": "^1.7.0",
     "next": "^16.0.7",
     "next-mdx-remote": "^5.0.0",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "remark-gfm": "^4.0.1",
-    "shiki": "^3.19.0",
+    "shiki": "^4.0.2",
     "tinyglobby": "^0.2.15"
   },
   "devDependencies": {
