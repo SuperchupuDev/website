@@ -31,10 +31,10 @@
     "tinyglobby": "^0.2.15"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.6",
-    "@types/node": "^25.4.0",
+    "@biomejs/biome": "^2.4.7",
+    "@types/node": "^25.5.0",
     "@types/react": "^19.2.14",
     "typescript": "^5.9.3"
   },
-  "packageManager": "pnpm@10.32.0"
+  "packageManager": "pnpm@10.32.1"
 }
