@@ -16,7 +16,7 @@ importers:
         version: 4.0.2
       '@shikijs/twoslash':
         specifier: ^4.0.2
-        version: 4.0.2(typescript@5.9.3)
+        version: 4.0.2(typescript@6.0.2)
       dedent:
         specifier: ^1.7.2
         version: 1.7.2
@@ -52,8 +52,8 @@ importers:
         specifier: ^19.2.14
         version: 19.2.14
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: ^6.0.2
+        version: 6.0.2
 
 packages:
 
@@ -937,8 +937,8 @@ packages:
     peerDependencies:
       typescript: ^5.5.0
 
-  typescript@5.9.3:
-    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+  typescript@6.0.2:
+    resolution: {integrity: sha512-bGdAIrZ0wiGDo5l8c++HWtbaNCWTS4UTv7RaTH/ThVIgjkveJt83m74bBHMJkuCbslY8ixgLBVZJIOiQlQTjfQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -1237,12 +1237,12 @@ snapshots:
       '@shikijs/core': 4.0.2
       '@shikijs/types': 4.0.2
 
-  '@shikijs/twoslash@4.0.2(typescript@5.9.3)':
+  '@shikijs/twoslash@4.0.2(typescript@6.0.2)':
     dependencies:
       '@shikijs/core': 4.0.2
       '@shikijs/types': 4.0.2
-      twoslash: 0.3.6(typescript@5.9.3)
-      typescript: 5.9.3
+      twoslash: 0.3.6(typescript@6.0.2)
+      typescript: 6.0.2
     transitivePeerDependencies:
       - supports-color
 
@@ -1291,10 +1291,10 @@ snapshots:
 
   '@types/unist@3.0.3': {}
 
-  '@typescript/vfs@1.6.4(typescript@5.9.3)':
+  '@typescript/vfs@1.6.4(typescript@6.0.2)':
     dependencies:
       debug: 4.4.3
-      typescript: 5.9.3
+      typescript: 6.0.2
     transitivePeerDependencies:
       - supports-color
 
@@ -2169,15 +2169,15 @@ snapshots:
 
   twoslash-protocol@0.3.6: {}
 
-  twoslash@0.3.6(typescript@5.9.3):
+  twoslash@0.3.6(typescript@6.0.2):
     dependencies:
-      '@typescript/vfs': 1.6.4(typescript@5.9.3)
+      '@typescript/vfs': 1.6.4(typescript@6.0.2)
       twoslash-protocol: 0.3.6
-      typescript: 5.9.3
+      typescript: 6.0.2
     transitivePeerDependencies:
       - supports-color
 
-  typescript@5.9.3: {}
+  typescript@6.0.2: {}
 
   undici-types@7.18.2: {}
 
