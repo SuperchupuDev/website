@@ -102,15 +102,15 @@ export default function Page() {
       <p>
         In terms of size, <code>tinyglobby</code> currently has{' '}
         <Link href="https://pkg-size.dev/tinyglobby" target="_blank">
-          179KB
+          183KB
         </Link>{' '}
         of package size, compared to <code>globby</code>'s{' '}
         <Link href="https://pkg-size.dev/globby" target="_blank">
-          637KB
+          697KB
         </Link>{' '}
         and <code>fast-glob</code>'s{' '}
         <Link href="https://pkg-size.dev/fast-glob" target="_blank">
-          513KB
+          515KB
         </Link>
         .
       </p>

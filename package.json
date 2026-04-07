@@ -18,23 +18,23 @@
     "#*": "./src/*"
   },
   "dependencies": {
-    "@primer/octicons-react": "^19.22.0",
+    "@primer/octicons-react": "^19.23.1",
     "@shikijs/transformers": "^4.0.2",
     "@shikijs/twoslash": "^4.0.2",
     "dedent": "^1.7.2",
-    "next": "^16.1.6",
+    "next": "^16.2.2",
     "next-mdx-remote": "^6.0.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "remark-gfm": "^4.0.1",
     "shiki": "^4.0.2",
-    "tinyglobby": "^0.2.15"
+    "tinyglobby": "^0.2.16"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.6",
-    "@types/node": "^25.4.0",
+    "@biomejs/biome": "^2.4.10",
+    "@types/node": "^25.5.2",
     "@types/react": "^19.2.14",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.2"
   },
-  "packageManager": "pnpm@10.32.0"
+  "packageManager": "pnpm@10.33.0"
 }
