@@ -58,7 +58,8 @@ export default function Page() {
         so that they use less dependencies and are lighter in general
       </p>
       <p>
-        by the way a few years ago i made the best website of all time. yup youve heard that right you can check it out at{' '}
+        by the way a few years ago i made the best website of all time. yup youve heard that right you can check it out
+        at{' '}
         <Link href="https://thefunniestcatsofalltime.pages.dev/" target="_blank">
           thefunniestcatsofalltime.pages.dev
         </Link>
