@@ -28,9 +28,11 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
   return {
     title: frontmatter.title,
     description: frontmatter.excerpt,
-    openGraph: {
-      images: [frontmatter.coverImage]
-    }
+    openGraph: frontmatter.coverImage
+      ? {
+          images: [frontmatter.coverImage]
+        }
+      : undefined
   };
 }
 

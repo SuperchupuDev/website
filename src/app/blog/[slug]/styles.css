@@ -26,4 +26,22 @@
       border: 1px solid gray;
     }
   }
+
+  blockquote {
+    border-left: 6px solid #cccccc;
+    margin: 1.5em 10px;
+    padding: 0 10px;
+  }
+
+  .float-left {
+    float: left;
+    padding: 8px 16px;
+    max-width: calc(100cqw - 48px);
+  }
+
+  .float-right {
+    float: right;
+    padding: 8px 16px;
+    max-width: calc(100cqw - 48px);
+  }
 }

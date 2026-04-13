@@ -4,7 +4,7 @@ import { PostTitle } from './PostTitle.tsx';
 
 type Props = {
   title: string;
-  coverImage: string;
+  coverImage?: string;
   date: string;
   excerpt: string;
 };
@@ -13,7 +13,7 @@ export function PostHeader({ title, coverImage, date, excerpt }: Props) {
   return (
     <>
       <PostTitle>{title}</PostTitle>
-      <CoverImage title={title} excerpt={excerpt} src={coverImage} />
+      {coverImage ? <CoverImage title={title} excerpt={excerpt} src={coverImage} /> : null}
       <DateContainer date={date} />
     </>
   );

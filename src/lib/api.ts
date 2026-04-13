@@ -20,7 +20,7 @@ export interface Post {
   frontmatter: {
     title: string;
     date: string;
-    coverImage: string;
+    coverImage?: string;
     excerpt: string;
     content: string;
     hidden?: boolean;
