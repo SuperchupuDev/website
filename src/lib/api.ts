@@ -22,6 +22,7 @@ export interface Post {
     date: string;
     coverImage?: string;
     excerpt: string;
+    tags?: string[];
     content: string;
     hidden?: boolean;
   };

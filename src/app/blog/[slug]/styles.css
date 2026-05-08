@@ -5,13 +5,26 @@
   margin-right: auto;
   width: 1000px;
 
-  img {
+  img,
+  iframe {
     max-width: calc(100cqw - 16px);
     height: auto;
   }
 
+  img {
+    height: auto;
+  }
+
+  iframe {
+    aspect-ratio: 16 / 9;
+  }
+
   h1 {
     font-size: 36px;
+  }
+
+  h2 {
+    font-size: 24px;
   }
 
   p {

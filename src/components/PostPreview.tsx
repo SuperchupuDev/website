@@ -8,7 +8,18 @@ export const PostPreview = ({ frontmatter, slug }: PostData) => {
       <h2>
         <Link href={`/blog/${slug}`}>{frontmatter.title}</Link>
       </h2>
-      <DateContainer date={frontmatter.date} />
+      <p>
+        <DateContainer date={frontmatter.date} />
+        {frontmatter.tags && (
+          <>
+            {' | '}
+            Tags:{' '}
+            {frontmatter.tags.map(t => (
+              <code key={t}>{t}</code>
+            ))}
+          </>
+        )}
+      </p>
       <p>{frontmatter.excerpt}</p>
     </article>
   );

@@ -56,6 +56,9 @@ header {
 code {
   /* 15/16, alternative to doing 15px */
   font-size: 0.9375rem;
+  small & {
+    font-size: medium;
+  }
 }
 
 .sub {
